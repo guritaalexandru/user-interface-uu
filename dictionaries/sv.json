@@ -5,5 +5,6 @@
   "CHANGE_LANGUAGE_ENGLISH": "Engelska",
   "CHANGE_LANGUAGE_SWEDISH": "Svenska",
   "CLIENT_ORDER_PANEL_TITLE": "Klientorder",
-  "CLIENT_ORDER_ITEM_PRICE": "Pris"
+  "CLIENT_ORDER_ITEM_PRICE": "Pris",
+  "CLIENT_ORDER_TOTAL_PRICE": "Totalt pris"
 }

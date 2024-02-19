@@ -20,7 +20,7 @@ class ClientOrderItem extends HTMLElement {
 		const itemQuantity = this.getAttribute('itemQuantity');
 
 		return `
-	  <div id="ClientOrderItem">
+	  <div id="ClientOrderItem" data-item-id="${itemId}">
 	  	<div>
 	  		<span>${itemName}</span>
 		</div>
@@ -31,12 +31,59 @@ class ClientOrderItem extends HTMLElement {
 		<div>
 	  		<span>${itemQuantity}</span>
 		</div>
+		<div>
+			<button class="plusButton" data-item-id="${itemId}">
+				+
+			</button>
+		</div>
+		<div>
+			<button class="minusButton" data-item-id="${itemId}">
+				-
+			</button>
+		</div>
+		<div>
+			<button class="deleteButton" data-item-id="${itemId}">
+				Add delete icon here
+			</button>
+		</div>
 	  </div>
 	`;
 	}
 
 	initEventListeners() {
+		const domElement = this.firstElementChild;
+		const plusButton = domElement.querySelector('.plusButton');
+		const minusButton = domElement.querySelector('.minusButton');
+		const deleteButton = domElement.querySelector('.deleteButton');
 
+		const itemId = parseInt(domElement.getAttribute('data-item-id'));
+
+		plusButton.addEventListener('click', function() {
+			window.globalState.clientCurrentOrderArray.forEach(orderItem => {
+				if (orderItem.itemId === itemId) {
+					orderItem.itemQuantity++;
+				}
+			});
+			window.triggerRedraws();
+		});
+
+		minusButton.addEventListener('click', function() {
+			window.globalState.clientCurrentOrderArray.forEach(orderItem => {
+				if (orderItem.itemId === itemId) {
+					orderItem.itemQuantity--;
+				}
+
+				if (orderItem.itemQuantity <= 0) {
+					window.globalState.clientCurrentOrderArray = window.globalState.clientCurrentOrderArray.filter(orderItem => orderItem.itemId !== itemId);
+				}
+			});
+			window.triggerRedraws();
+		});
+
+		deleteButton.addEventListener('click', function() {
+			window.globalState.clientCurrentOrderArray = window.globalState.clientCurrentOrderArray.filter(orderItem => orderItem.itemId !== itemId);
+			window.triggerRedraws();
+		});
 	}
 
 	connectedCallback() {

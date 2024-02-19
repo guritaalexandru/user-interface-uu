@@ -17,6 +17,11 @@ class ClientOrderPanel extends HTMLElement {
 			clientCurrentOrderArray
 		} = this.getRelatedGlobalStates();
 
+		let totalOrderPrice = 0;
+		clientCurrentOrderArray.forEach(orderItem => {
+			totalOrderPrice += orderItem.itemPrice * orderItem.itemQuantity;
+		});
+
 		return `
 	  <div id="ClientOrderPanel">
 		<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
@@ -24,6 +29,11 @@ class ClientOrderPanel extends HTMLElement {
 			${clientCurrentOrderArray.map(orderItem => `
 				<client-order-item-component itemId="${orderItem.itemId}" itemName="${orderItem.itemName}" itemPrice="${orderItem.itemPrice}" itemQuantity="${orderItem.itemQuantity}"></client-order-item-component>
 			`).join('')}
+		</div>
+		
+		<div id="ClientOrderTotalPrice">
+			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
+			<span>${totalOrderPrice}</span>
 		</div>
 	  </div>
 	`;
