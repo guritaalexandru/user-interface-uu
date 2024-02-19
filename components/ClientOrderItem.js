@@ -1,29 +1,35 @@
-class LeftPanel extends HTMLElement {
+class ClientOrderItem extends HTMLElement {
 	constructor() {
 		super();
 	}
 
 	getRelatedGlobalStates() {
 		const {
-			userType
 		} = window.globalState;
 		return {
-			userType
 		};
 	}
 
 	componentHTML() {
 		const {
-			userType
 		} = this.getRelatedGlobalStates();
 
+		const itemId = this.getAttribute('itemId');
+		const itemName = this.getAttribute('itemName');
+		const itemPrice = this.getAttribute('itemPrice');
+		const itemQuantity = this.getAttribute('itemQuantity');
+
 		return `
-	  <div id="LeftPanel">
-		<div class="${userType === 'client' ? '' : 'hide'}">
-			<client-order-panel-component></client-order-panel-component>
+	  <div id="ClientOrderItem">
+	  	<div>
+	  		<span>${itemName}</span>
 		</div>
-		<div class="${userType === 'staff' ? '' : 'hide'}">
-			<staff-left-panel-component></staff-left-panel-component>
+		<div>
+			<span data-language-tag="CLIENT_ORDER_ITEM_PRICE"></span>
+	  		<span>${itemPrice}</span>
+		</div>
+		<div>
+	  		<span>${itemQuantity}</span>
 		</div>
 	  </div>
 	`;
@@ -57,4 +63,4 @@ class LeftPanel extends HTMLElement {
 	}
 }
 
-customElements.define('left-panel-component', LeftPanel);
+customElements.define('client-order-item-component', ClientOrderItem);

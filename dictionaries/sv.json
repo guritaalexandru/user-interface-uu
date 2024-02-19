@@ -3,5 +3,7 @@
   "LOGIN": "Logga in",
   "LOGOUT": "Logga ut",
   "CHANGE_LANGUAGE_ENGLISH": "Engelska",
-  "CHANGE_LANGUAGE_SWEDISH": "Svenska"
+  "CHANGE_LANGUAGE_SWEDISH": "Svenska",
+  "CLIENT_ORDER_PANEL_TITLE": "Klientorder",
+  "CLIENT_ORDER_ITEM_PRICE": "Pris"
 }

@@ -5,18 +5,26 @@ class ClientOrderPanel extends HTMLElement {
 
 	getRelatedGlobalStates() {
 		const {
+			clientCurrentOrderArray
 		} = window.globalState;
 		return {
+			clientCurrentOrderArray
 		};
 	}
 
 	componentHTML() {
 		const {
+			clientCurrentOrderArray
 		} = this.getRelatedGlobalStates();
 
 		return `
 	  <div id="ClientOrderPanel">
-
+		<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
+		<div id="ClientOrderItems">
+			${clientCurrentOrderArray.map(orderItem => `
+				<client-order-item-component itemId="${orderItem.itemId}" itemName="${orderItem.itemName}" itemPrice="${orderItem.itemPrice}" itemQuantity="${orderItem.itemQuantity}"></client-order-item-component>
+			`).join('')}
+		</div>
 	  </div>
 	`;
 	}
