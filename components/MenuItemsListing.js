@@ -1,41 +1,29 @@
-class ClientOrderPanel extends HTMLElement {
+class MenuItemsListing extends HTMLElement {
 	constructor() {
 		super();
 	}
 
 	getRelatedGlobalStates() {
 		const {
-			clientCurrentOrderArray
+			menuItems
 		} = window.globalState;
 		return {
-			clientCurrentOrderArray
+			menuItems
 		};
 	}
 
 	componentHTML() {
 		const {
-			clientCurrentOrderArray
+			menuItems
 		} = this.getRelatedGlobalStates();
 
-		let totalOrderPrice = 0;
-		clientCurrentOrderArray.forEach(orderItem => {
-			const menuItem = window.getMenuItemById(orderItem.itemId);
-			totalOrderPrice += menuItem.itemPrice * orderItem.itemQuantity;
-		});
-
 		return `
-	  <div id="ClientOrderPanel">
-		<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
-		<div id="ClientOrderItems">
-			${clientCurrentOrderArray.map(orderItem => `
-				<client-order-item-component itemId="${orderItem.itemId}"></client-order-item-component>
-			`).join('')}
-		</div>
-		
-		<div id="ClientOrderTotalPrice">
-			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
-			<span>${totalOrderPrice}</span>
-		</div>
+	  <div id="MenuItemsListing">
+	  		<div>
+		        ${menuItems.map(menuItem => {
+					return `<menu-item-component itemId="${menuItem.itemId}"></menu-item-component>`;
+				}).join('')}
+			</div>
 	  </div>
 	`;
 	}
@@ -68,4 +56,4 @@ class ClientOrderPanel extends HTMLElement {
 	}
 }
 
-customElements.define('client-order-panel-component', ClientOrderPanel);
+customElements.define('menu-items-listing-component', MenuItemsListing);

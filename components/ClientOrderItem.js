@@ -14,10 +14,13 @@ class ClientOrderItem extends HTMLElement {
 		const {
 		} = this.getRelatedGlobalStates();
 
-		const itemId = this.getAttribute('itemId');
-		const itemName = this.getAttribute('itemName');
-		const itemPrice = this.getAttribute('itemPrice');
-		const itemQuantity = this.getAttribute('itemQuantity');
+		const itemId = parseInt(this.getAttribute('itemId'));
+		const orderItem = window.getOrderItemById(itemId);
+		const bdItem = window.getMenuItemById(itemId);
+
+		const itemName = bdItem.itemName;
+		const itemPrice = bdItem.itemPrice;
+		const itemQuantity = orderItem.itemQuantity;
 
 		return `
 	  <div id="ClientOrderItem" data-item-id="${itemId}">

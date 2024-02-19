@@ -49,8 +49,10 @@ class Header extends HTMLElement {
 		document.getElementById('LoginButton').addEventListener('click', function() {
 			if (window.globalState.isLoggedIn) {
 				window.globalState.isLoggedIn = false;
+				window.globalState.userType = 'client';
 			} else {
 				window.globalState.isLoggedIn = true;
+				window.globalState.userType = 'staff';
 			}
 			window.triggerRedraws();
 		});

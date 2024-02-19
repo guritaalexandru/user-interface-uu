@@ -1,41 +1,24 @@
-class ClientOrderPanel extends HTMLElement {
+class MenuCategories extends HTMLElement {
 	constructor() {
 		super();
 	}
 
 	getRelatedGlobalStates() {
 		const {
-			clientCurrentOrderArray
 		} = window.globalState;
 		return {
-			clientCurrentOrderArray
 		};
 	}
 
 	componentHTML() {
 		const {
-			clientCurrentOrderArray
 		} = this.getRelatedGlobalStates();
 
-		let totalOrderPrice = 0;
-		clientCurrentOrderArray.forEach(orderItem => {
-			const menuItem = window.getMenuItemById(orderItem.itemId);
-			totalOrderPrice += menuItem.itemPrice * orderItem.itemQuantity;
-		});
-
 		return `
-	  <div id="ClientOrderPanel">
-		<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
-		<div id="ClientOrderItems">
-			${clientCurrentOrderArray.map(orderItem => `
-				<client-order-item-component itemId="${orderItem.itemId}"></client-order-item-component>
-			`).join('')}
-		</div>
-		
-		<div id="ClientOrderTotalPrice">
-			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
-			<span>${totalOrderPrice}</span>
-		</div>
+	  <div id="MenuCategories">
+	  	<button data-language-tag="MENU_CATEGORY_BEER"></button>
+	  	<button data-language-tag="MENU_CATEGORY_WINE"></button>
+	  	<button data-language-tag="MENU_CATEGORY_SPIRITS"></button>
 	  </div>
 	`;
 	}
@@ -68,4 +51,4 @@ class ClientOrderPanel extends HTMLElement {
 	}
 }
 
-customElements.define('client-order-panel-component', ClientOrderPanel);
+customElements.define('menu-categories-component', MenuCategories);

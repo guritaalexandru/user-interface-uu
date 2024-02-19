@@ -15,9 +15,9 @@ class RightPanel extends HTMLElement {
 		} = this.getRelatedGlobalStates();
 
 		return `
-	  <div id="RightPanel">
-
-	  </div>
+		  <div id="RightPanel">
+			<menu-wrapper-component></menu-wrapper-component>
+		  </div>
 	`;
 	}
 
