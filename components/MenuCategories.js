@@ -16,15 +16,24 @@ class MenuCategories extends HTMLElement {
 
 		return `
 	  <div id="MenuCategories">
-	  	<button data-language-tag="MENU_CATEGORY_BEER"></button>
-	  	<button data-language-tag="MENU_CATEGORY_WINE"></button>
-	  	<button data-language-tag="MENU_CATEGORY_SPIRITS"></button>
+	  	<button data-language-tag="MENU_CATEGORY_ALL" data-menu-category="all"></button>
+	  	<button data-language-tag="MENU_CATEGORY_BEER" data-menu-category="beer"></button>
+	  	<button data-language-tag="MENU_CATEGORY_WINE" data-menu-category="wine"></button>
+	  	<button data-language-tag="MENU_CATEGORY_SPIRITS" data-menu-category="spirits"></button>
+	  	<button data-language-tag="MENU_CATEGORY_NON_ALCOHOLIC" data-menu-category="non-alcoholic"></button>
 	  </div>
 	`;
 	}
 
 	initEventListeners() {
-
+		// When pressed, it will change the global state for the current category shown in the menu
+		document.querySelectorAll('#MenuCategories button').forEach(menuCategoryButton => {
+			menuCategoryButton.addEventListener('click', function() {
+				const selectedCategory = this.getAttribute('data-menu-category');
+				window.globalState.currentMenuTab = selectedCategory;
+				window.triggerRedraws();
+			});
+		});
 	}
 
 	connectedCallback() {

@@ -5,22 +5,33 @@ class MenuItemsListing extends HTMLElement {
 
 	getRelatedGlobalStates() {
 		const {
-			menuItems
+			menuItems,
+			currentMenuTab
 		} = window.globalState;
 		return {
-			menuItems
+			menuItems,
+			currentMenuTab
 		};
 	}
 
 	componentHTML() {
 		const {
-			menuItems
+			menuItems,
+			currentMenuTab
 		} = this.getRelatedGlobalStates();
+		const availableItems = menuItems.filter(menuItem => menuItem.published && !menuItem.deleted);
+
+		let filteredMenuItems;
+		if (currentMenuTab === 'all') {
+			filteredMenuItems = availableItems;
+		} else {
+			filteredMenuItems = availableItems.filter(menuItem => menuItem.itemCategory === currentMenuTab);
+		}
 
 		return `
 	  <div id="MenuItemsListing">
 	  		<div>
-		        ${menuItems.map(menuItem => {
+		        ${filteredMenuItems.map(menuItem => {
 					return `<menu-item-component itemId="${menuItem.itemId}"></menu-item-component>`;
 				}).join('')}
 			</div>
