@@ -7,9 +7,11 @@
   "CLIENT_ORDER_PANEL_TITLE": "Order",
   "CLIENT_ORDER_ITEM_PRICE": "Price",
   "CLIENT_ORDER_TOTAL_PRICE": "Total Price",
+  "MENU_CATEGORY_ALL": "All",
   "MENU_CATEGORY_BEER": "Beer",
   "MENU_CATEGORY_WINE": "Wine",
   "MENU_CATEGORY_SPIRITS": "Spirits",
+  "MENU_CATEGORY_NON_ALCOHOLIC": "Non-Alcoholic",
   "MENU_ITEM_PRICE": "Price",
   "MENU_ITEM_ADD_TO_ORDER": "Add to Order"
 }

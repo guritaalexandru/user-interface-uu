@@ -28,6 +28,7 @@ class MenuItem extends HTMLElement {
 				<span data-language-tag="MENU_ITEM_PRICE"></span>
 		        <span>${itemPrice}</span>
 			</div>
+			<!--	TODO: Add to order only available for clients, not staff		-->
 			<div>
 				<button class="addToOrder" data-item-id="${itemId}" data-language-tag="MENU_ITEM_ADD_TO_ORDER"></button>
 			</div>
