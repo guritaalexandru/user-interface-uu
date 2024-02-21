@@ -1,6 +1,7 @@
 class MenuItem extends HTMLElement {
 	constructor() {
 		super();
+		this.addNumber = 0; // the total number of order to add on the button press
 	}
 
 	getRelatedGlobalStates() {
@@ -18,21 +19,30 @@ class MenuItem extends HTMLElement {
 		const menuItem = window.getMenuItemById(itemId);
 		const itemName = menuItem.itemName;
 		const itemPrice = menuItem.itemPrice;
+		//const itemImageLink = menuItem.itemImageLink; //Uncomment this line when using actual images 
+		const itemImageLink = 'https://cdn.pixabay.com/photo/2016/09/14/11/35/beer-1669273_640.png'; // placeholder
+
 
 		return `
+		<div id="menuItemBorder">
 		  <div id="MenuItem" data-item-id="${itemId}">
 		  	<div>
 	  			<span>${itemName}</span>
 			</div>
 			<div>
+				<img id="menuItemImage" src="${itemImageLink}">
+			</div>
+			<div>
 				<span data-language-tag="MENU_ITEM_PRICE"></span>
-		        <span>${itemPrice}</span>
+		        <span>${itemPrice} SEK</span>
 			</div>
 			<!--	TODO: Add to order only available for clients, not staff		-->
 			<div>
 				<button class="addToOrder" data-item-id="${itemId}" data-language-tag="MENU_ITEM_ADD_TO_ORDER"></button>
-			</div>
+				
+				</div>
 		  </div>
+		<div>
 	`;
 	}
 

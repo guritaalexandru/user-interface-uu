@@ -74,3 +74,26 @@ nav {
   border-radius: 5px;
 }
 
+/* Styling for the item borders */
+#menuItemBorder{
+  border:1px solid;
+  border-radius: 5%;
+  color: black;
+  padding: 10px; 
+  width:160px;
+}
+
+/* Styling for the menu item images */
+#menuItemImage{
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+}
+
+/* Styling for the rows of items displayed */
+#MenuItemsListing{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minMax(200px, 1fr));
+  gap:10px;  
+}
+
