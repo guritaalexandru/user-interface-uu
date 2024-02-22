@@ -23,7 +23,7 @@ class ClientOrderItem extends HTMLElement {
 		const itemQuantity = orderItem.itemQuantity;
 
 		return `
-	  <div id="ClientOrderItem" data-item-id="${itemId}">
+	  <div id="ClientOrderItem" class="order-item" data-item-id="${itemId}">
 	  	<div>
 	  		<span>${itemName}</span>
 		</div>
@@ -34,15 +34,17 @@ class ClientOrderItem extends HTMLElement {
 		<div>
 	  		<span>${itemQuantity}</span>
 		</div>
-		<div>
-			<button class="plusButton" data-item-id="${itemId}">
-				+
-			</button>
-		</div>
-		<div>
-			<button class="minusButton" data-item-id="${itemId}">
-				-
-			</button>
+		<div class="plus-minus-buttons">
+			<div>
+				<button class="plusButton" data-item-id="${itemId}">
+					+
+				</button>
+			</div>
+			<div>
+				<button class="minusButton" data-item-id="${itemId}">
+					-
+				</button>
+			</div>
 		</div>
 		<div>
 			<button class="deleteButton" data-item-id="${itemId}">

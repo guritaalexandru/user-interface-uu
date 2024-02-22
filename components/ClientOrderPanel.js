@@ -25,14 +25,16 @@ class ClientOrderPanel extends HTMLElement {
 
 		return `
 	  <div id="ClientOrderPanel">
-		<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
+		<div class=order-title>
+			<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
+		</div>
 		<div id="ClientOrderItems">
 			${clientCurrentOrderArray.map(orderItem => `
 				<client-order-item-component itemId="${orderItem.itemId}"></client-order-item-component>
 			`).join('')}
 		</div>
 		
-		<div id="ClientOrderTotalPrice">
+		<div id="ClientOrderTotalPrice" class="total-price">
 			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
 			<span>${totalOrderPrice}</span>
 		</div>

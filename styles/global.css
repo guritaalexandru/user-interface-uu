@@ -53,11 +53,117 @@ nav {
 }
 
 .left-panel {
+  background-color: #e3e3e3;
   flex: 0 0 30%;
 }
 
 .right-panel {
+  background-color: #c4c4c4;
   flex: 1;
+}
+
+/* -- Right Panel Styling -- */
+.menu-categories {
+  background-color: grey;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.menu-item-listing {
+  padding: 20px;
+  display: flex;
+  flex-direction:column;
+  gap: 15px;
+}
+
+.menu-item{
+  background-color: #e3e3e3;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.addToOrder {
+  background-color: #e2ed68;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.addToOrder:hover {
+  background-color: #80d983;
+  transition: background-color linear 0.3s;
+}
+
+/* -- Left Panel Styling --*/
+.order-title {
+  padding-left: 20px;
+}
+
+.order-item {
+  background-color: white;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.plusButton {
+  background-color: #e3e3e3;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.minusButton {
+  background-color: #e3e3e3;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.plus-minus-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.deleteButton {
+  background-color: rgb(243, 79, 79);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.total-price {
+  margin: 20px;
 }
 
 /* --- General elements styling --- */
@@ -72,5 +178,10 @@ nav {
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.basicButton:hover {
+  background-color: #80d983;
+  transition: background-color linear 0.3s;
 }
 
