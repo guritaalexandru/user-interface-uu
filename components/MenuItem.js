@@ -19,8 +19,8 @@ class MenuItem extends HTMLElement {
 		const menuItem = window.getMenuItemById(itemId);
 		const itemName = menuItem.itemName;
 		const itemPrice = menuItem.itemPrice;
-		//const itemImageLink = menuItem.itemImageLink; //Uncomment this line when using actual images 
-		const itemImageLink = 'https://cdn.pixabay.com/photo/2016/09/14/11/35/beer-1669273_640.png'; // placeholder
+		const itemImageLink = menuItem.itemImage;
+		// const itemImageLink = 'https://cdn.pixabay.com/photo/2016/09/14/11/35/beer-1669273_640.png'; // placeholder
 
 
 		return `
