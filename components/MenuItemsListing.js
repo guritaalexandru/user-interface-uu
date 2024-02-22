@@ -28,13 +28,12 @@ class MenuItemsListing extends HTMLElement {
 			filteredMenuItems = availableItems.filter(menuItem => menuItem.itemCategory === currentMenuTab);
 		}
 
+
 		return `
 	  <div id="MenuItemsListing">
-	  		<div>
-		        ${filteredMenuItems.map(menuItem => {
-					return `<menu-item-component itemId="${menuItem.itemId}"></menu-item-component>`;
-				}).join('')}
-			</div>
+			${filteredMenuItems.map(menuItem => {
+				return `<menu-item-component itemId="${menuItem.itemId}"></menu-item-component>`;
+			}).join('')}
 	  </div>
 	`;
 	}
