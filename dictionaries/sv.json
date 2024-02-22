@@ -13,5 +13,6 @@
   "MENU_CATEGORY_SPIRITS": "Sprit",
   "MENU_CATEGORY_NON_ALCOHOLIC": "Alkoholfritt",
   "MENU_ITEM_PRICE": "Pris",
-  "MENU_ITEM_ADD_TO_ORDER": "Lägg till i order"
+  "MENU_ITEM_ADD_TO_ORDER": "Lägg till i order",
+  "PROCEED_CHEQUE": "Fortsätt till betalning"
 }

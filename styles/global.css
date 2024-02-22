@@ -166,6 +166,10 @@ nav {
   margin: 20px;
 }
 
+.paymentButton {
+  margin: 20px;
+}
+
 /* --- General elements styling --- */
 .basicButton {
   background-color: #4CAF50; /* Green */

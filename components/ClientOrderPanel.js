@@ -38,6 +38,10 @@ class ClientOrderPanel extends HTMLElement {
 			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
 			<span>${totalOrderPrice}</span>
 		</div>
+
+		<div class="paymentButton">
+			<button class="basicButton" data-language-tag="PROCEED_CHEQUE"></button>
+		</div>
 	  </div>
 	`;
 	}

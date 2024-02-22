@@ -13,5 +13,6 @@
   "MENU_CATEGORY_SPIRITS": "Spirits",
   "MENU_CATEGORY_NON_ALCOHOLIC": "Non-Alcoholic",
   "MENU_ITEM_PRICE": "Price",
-  "MENU_ITEM_ADD_TO_ORDER": "Add to Order"
+  "MENU_ITEM_ADD_TO_ORDER": "Add to Order",
+  "PROCEED_CHEQUE": "Proceed to Payment"
 }
