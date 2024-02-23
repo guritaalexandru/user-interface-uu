@@ -18,6 +18,7 @@ class MainPanel extends HTMLElement {
 			<div id="MainPanel" class="main-panel">
 			    <left-panel-component class="left-panel"></left-panel-component>
 			    <right-panel-component class="right-panel"></right-panel-component>
+				<payment-popup-component></payment-popup-component>
 			</div>
 	`;
 	}

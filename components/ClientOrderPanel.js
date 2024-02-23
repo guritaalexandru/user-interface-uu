@@ -12,6 +12,12 @@ class ClientOrderPanel extends HTMLElement {
 		};
 	}
 
+	// When the user clicks on <div>, open the popup
+    myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+
 	componentHTML() {
 		const {
 			clientCurrentOrderArray
