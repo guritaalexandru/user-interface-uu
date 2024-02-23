@@ -18,5 +18,8 @@
   "MENU_ITEM_ALCOHOLSTRENGTH": "alkoholhalt",
   "MENU_ITEM_PRODUCER": "Producent",
   "MENU_ITEM_ADD_TO_ORDER": "Lägg till i order",
-  "PROCEED_CHEQUE": "Fortsätt till betalning"
+  "PROCEED_CHEQUE": "Fortsätt till betalning",
+  "STAFF_PANEL_MENU": "Meny",
+  "STAFF_PANEL_ORDERS": "Ordrar",
+  "STAFF_PANEL_SECURITY": "Säkerhet"
 }

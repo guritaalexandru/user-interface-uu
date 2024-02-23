@@ -15,14 +15,24 @@ class StaffLeftPanel extends HTMLElement {
 		} = this.getRelatedGlobalStates();
 
 		return `
-	  <div id="StaffLeftPanel">
-
-	  </div>
+			<div id="StaffLeftPanel">
+			  <div class="menu-buttons">
+			    <div class="menu-button" data-language-tag="STAFF_PANEL_MENU" data-staff-panel-option="menu"></div>
+			    <div class="menu-button" data-language-tag="STAFF_PANEL_ORDERS" data-staff-panel-option="orders"></div>
+			    <div class="menu-button" data-language-tag="STAFF_PANEL_SECURITY" data-staff-panel-option="security"></div>
+			  </div>
+			</div>
 	`;
 	}
 
 	initEventListeners() {
-
+		document.querySelectorAll('[data-staff-panel-option]').forEach(staffPanelOption => {
+					staffPanelOption.addEventListener('click', function() {
+						const selectedOption = this.getAttribute('data-staff-panel-option');
+						window.globalState.currentRightPanel = selectedOption;
+						window.triggerRedraws();
+					});
+				});
 	}
 
 	connectedCallback() {
