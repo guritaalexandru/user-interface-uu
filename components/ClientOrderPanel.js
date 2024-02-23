@@ -12,6 +12,12 @@ class ClientOrderPanel extends HTMLElement {
 		};
 	}
 
+	// When the user clicks on <div>, open the popup
+    myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+
 	componentHTML() {
 		const {
 			clientCurrentOrderArray
@@ -37,6 +43,10 @@ class ClientOrderPanel extends HTMLElement {
 		<div id="ClientOrderTotalPrice" class="total-price">
 			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
 			<span>${totalOrderPrice}</span>
+		</div>
+
+		<div class="paymentButton">
+			<button class="basicButton" data-language-tag="PROCEED_CHEQUE"></button>
 		</div>
 	  </div>
 	`;
