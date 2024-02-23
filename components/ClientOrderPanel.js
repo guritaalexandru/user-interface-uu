@@ -1,6 +1,8 @@
 class ClientOrderPanel extends HTMLElement {
 	constructor() {
 		super();
+		this.allowDrop = this.allowDrop.bind(this);
+		this.drop = this.drop.bind(this);
 	}
 
 	getRelatedGlobalStates() {
@@ -17,6 +19,20 @@ class ClientOrderPanel extends HTMLElement {
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
       }
+
+	allowDrop(event) {
+		event.preventDefault();
+	}
+
+	drop(event) {
+		event.preventDefault();
+		const newOrderItemId = parseInt(event.dataTransfer.getData("text"));
+		if(isNaN(newOrderItemId)) {
+			return;
+		}
+		window.addItemToOrder(newOrderItemId);
+		window.triggerRedraws();
+	}
 
 	componentHTML() {
 		const {
@@ -53,7 +69,9 @@ class ClientOrderPanel extends HTMLElement {
 	}
 
 	initEventListeners() {
-
+		const domElement = this.firstElementChild;
+		domElement.addEventListener('drop', this.drop);
+		domElement.addEventListener('dragover', this.allowDrop);
 	}
 
 	connectedCallback() {
