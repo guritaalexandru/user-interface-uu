@@ -17,8 +17,6 @@ class RightPanel extends HTMLElement {
 			currentRightPanel
 		} = this.getRelatedGlobalStates();
 
-		console.log('currentRightPanel', currentRightPanel);
-
 		return `
 		  <div id="RightPanel">
 		  		<div class="${currentRightPanel === 'menu' ? '' : 'hide'}">
