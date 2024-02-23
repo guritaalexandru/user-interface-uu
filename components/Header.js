@@ -25,6 +25,7 @@ class Header extends HTMLElement {
 			      	<div id="languageDropdownMenu" class="dropdown-content">
 			        	<button class="language-option" data-language-tag="CHANGE_LANGUAGE_ENGLISH" data-language-change="en"></button>
 			        	<button class="language-option" data-language-tag="CHANGE_LANGUAGE_SWEDISH" data-language-change="sv"></button>
+			        	<button class="language-option" data-language-tag="CHANGE_LANGUAGE_CHINESE" data-language-change="zh-cht"></button>
 			        	<!-- Add more language options as needed -->
 			      	</div>
 			    </div>
