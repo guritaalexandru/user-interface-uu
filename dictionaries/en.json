@@ -18,5 +18,8 @@
   "MENU_ITEM_ALCOHOLSTRENGTH": "Alcohol Level",
   "MENU_ITEM_PRODUCER": "Producer",
   "MENU_ITEM_ADD_TO_ORDER": "Add to Order",
-  "PROCEED_CHEQUE": "Proceed to Payment"
+  "PROCEED_CHEQUE": "Proceed to Payment",
+  "STAFF_PANEL_MENU": "Menu",
+  "STAFF_PANEL_ORDERS": "Orders",
+  "STAFF_PANEL_SECURITY": "Security"
 }

@@ -1,36 +1,23 @@
-class RightPanel extends HTMLElement {
+class SecurityPanel extends HTMLElement {
 	constructor() {
 		super();
 	}
 
 	getRelatedGlobalStates() {
 		const {
-			currentRightPanel
 		} = window.globalState;
 		return {
-			currentRightPanel
 		};
 	}
 
 	componentHTML() {
 		const {
-			currentRightPanel
 		} = this.getRelatedGlobalStates();
 
-		console.log('currentRightPanel', currentRightPanel);
-
 		return `
-		  <div id="RightPanel">
-		  		<div class="${currentRightPanel === 'menu' ? '' : 'hide'}">
-		  			<menu-wrapper-component></menu-wrapper-component>
-		  		</div>
-		  		<div class="${currentRightPanel === 'orders' ? '' : 'hide'}">
-		  			<staff-orders-wrapper-component></staff-orders-wrapper-component>
-		  		</div>
-		  		<div class="${currentRightPanel === 'security' ? '' : 'hide'}">
-		  			<security-panel-component></security-panel-component>
-		  		</div>
-		  </div>
+	  <div id="SecurityPanel">
+
+	  </div>
 	`;
 	}
 
@@ -62,4 +49,4 @@ class RightPanel extends HTMLElement {
 	}
 }
 
-customElements.define('right-panel-component', RightPanel);
+customElements.define('security-panel-component', SecurityPanel);
