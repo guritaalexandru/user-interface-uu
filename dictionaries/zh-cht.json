@@ -1,0 +1,18 @@
+{
+  "CHANGE_LANGUAGE": "語言設置",
+  "LOGIN": "登入",
+  "LOGOUT": "登出",
+  "CHANGE_LANGUAGE_ENGLISH": "英文",
+  "CHANGE_LANGUAGE_SWEDISH": "瑞典語",
+  "CHANGE_LANGUAGE_CHINESE(Traditional)": "繁體中文",
+  "CLIENT_ORDER_PANEL_TITLE": "訂單",
+  "CLIENT_ORDER_ITEM_PRICE": "金額",
+  "CLIENT_ORDER_TOTAL_PRICE": "總金額",
+  "MENU_CATEGORY_ALL": "全部",
+  "MENU_CATEGORY_BEER": "啤酒",
+  "MENU_CATEGORY_WINE": "葡萄酒",
+  "MENU_CATEGORY_SPIRITS": "烈酒",
+  "MENU_CATEGORY_NON_ALCOHOLIC": "無酒精",
+  "MENU_ITEM_PRICE": "金額",
+  "MENU_ITEM_ADD_TO_ORDER": "加入訂單"
+}

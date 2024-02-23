@@ -4,6 +4,7 @@
   "LOGOUT": "Logout",
   "CHANGE_LANGUAGE_ENGLISH": "English",
   "CHANGE_LANGUAGE_SWEDISH": "Swedish",
+  "CHANGE_LANGUAGE_CHINESE": "Chinese(Traditional)",
   "CLIENT_ORDER_PANEL_TITLE": "Order",
   "CLIENT_ORDER_ITEM_PRICE": "Price",
   "CLIENT_ORDER_TOTAL_PRICE": "Total Price",
