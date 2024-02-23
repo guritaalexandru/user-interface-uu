@@ -50,17 +50,9 @@ const globalState = {
 	// Client state
 	clientCurrentOrderArray: [
 		{
-			itemId: 1,
+			itemId: 722706,
 			itemQuantity: 1
 		},
-		{
-			itemId: 2,
-			itemQuantity: 2
-		},
-		{
-			itemId: 3,
-			itemQuantity: 3
-		}
 	]
 };
 

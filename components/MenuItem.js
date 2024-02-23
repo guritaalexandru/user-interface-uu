@@ -1,6 +1,7 @@
 class MenuItem extends HTMLElement {
 	constructor() {
 		super();
+		this.addNumber = 0; // the total number of order to add on the button press
 	}
 
 	getRelatedGlobalStates() {
@@ -14,25 +15,50 @@ class MenuItem extends HTMLElement {
 		const {
 		} = this.getRelatedGlobalStates();
 
+		// Load all the items from the global variables
 		const itemId = parseInt(this.getAttribute('itemId'));
 		const menuItem = window.getMenuItemById(itemId);
 		const itemName = menuItem.itemName;
 		const itemPrice = menuItem.itemPrice;
+		const itemImageLink = menuItem.itemImage;
+		const itemCategory = menuItem.itemCategory;
+		const itemProducer = menuItem.producer;
+		const itemDescription = menuItem.description;
+		const alcoholLevel = menuItem.alcoholStrength;
+
 
 		return `
+		<div id="menuItemBorder">
 		  <div id="MenuItem" class="menu-item" data-item-id="${itemId}">
-		  	<div>
+		  	<div id="menuItemTitle">
 	  			<span>${itemName}</span>
 			</div>
 			<div>
+				<img id="menuItemImage" src="${itemImageLink}">
+			</div>
+			<div>
 				<span data-language-tag="MENU_ITEM_PRICE"></span>
-		        <span>${itemPrice}</span>
+		        <span>${itemPrice} SEK</span>
+			</div>
+			<div>
+				<span data-language-tag="MENU_ITEM_CATEGORY"></span>
+				<span>: ${itemCategory}</span>
+			</div>
+			<div>
+				<span data-language-tag="MENU_ITEM_PRODUCER"></span>
+				<span>: ${itemProducer}</span>
+			</div>
+			<div>
+				<span data-language-tag="MENU_ITEM_ALCOHOLSTRENGTH"></span>
+				<span>: ${alcoholLevel}</span>
 			</div>
 			<!--	TODO: Add to order only available for clients, not staff		-->
 			<div>
 				<button class="addToOrder" data-item-id="${itemId}" data-language-tag="MENU_ITEM_ADD_TO_ORDER"></button>
-			</div>
+				
+				</div>
 		  </div>
+		<div>
 	`;
 	}
 
