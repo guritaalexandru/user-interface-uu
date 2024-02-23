@@ -20,7 +20,7 @@ class MenuItem extends HTMLElement {
 		const itemPrice = menuItem.itemPrice;
 
 		return `
-		  <div id="MenuItem" data-item-id="${itemId}">
+		  <div id="MenuItem" class="menu-item" data-item-id="${itemId}">
 		  	<div>
 	  			<span>${itemName}</span>
 			</div>

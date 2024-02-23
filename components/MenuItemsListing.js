@@ -30,7 +30,7 @@ class MenuItemsListing extends HTMLElement {
 
 		return `
 	  <div id="MenuItemsListing">
-	  		<div>
+	  		<div class="menu-item-listing">
 		        ${filteredMenuItems.map(menuItem => {
 					return `<menu-item-component itemId="${menuItem.itemId}"></menu-item-component>`;
 				}).join('')}
