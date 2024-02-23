@@ -46,7 +46,7 @@ function getAllItems(database){
 
     for (i = 0; i < database.length; i++) {
 
-        console.log(database[i].name, database[i].priceinclvat, database[i].catgegory);
+        // console.log(database[i].name, database[i].priceinclvat, database[i].catgegory);
 
         //sort the item into the broader category names (beer,wine,spirits, alcoholfree)
         // NOTE: IN THE RAW FILES, category is mispelled as catgegory
@@ -79,7 +79,7 @@ function getAllItems(database){
 }
 
 function findCategory(rawCategory){
-    // helper function to sort the categories
+    // helper function to rename the rawcategory into a more broad name
     categoryItems = {
         "beer": ["ale", "stout", "ipa", "lager"],
         "wine": ["vin"],

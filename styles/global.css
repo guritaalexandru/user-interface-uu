@@ -80,7 +80,12 @@ nav {
   border-radius: 5%;
   color: black;
   padding: 10px; 
-  width:160px;
+  width:180px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Styling for the menu item images */
@@ -93,7 +98,12 @@ nav {
 /* Styling for the rows of items displayed */
 #MenuItemsListing{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minMax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minMax(220px, 1fr));
   gap:10px;  
+}
+
+#menuItemTitle{
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
