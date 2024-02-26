@@ -1,6 +1,8 @@
 class ClientOrderPanel extends HTMLElement {
 	constructor() {
 		super();
+		this.allowDrop = this.allowDrop.bind(this);
+		this.drop = this.drop.bind(this);
 	}
 
 	getRelatedGlobalStates() {
@@ -10,6 +12,26 @@ class ClientOrderPanel extends HTMLElement {
 		return {
 			clientCurrentOrderArray
 		};
+	}
+
+	// When the user clicks on <div>, open the popup
+    myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+
+	allowDrop(event) {
+		event.preventDefault();
+	}
+
+	drop(event) {
+		event.preventDefault();
+		const newOrderItemId = parseInt(event.dataTransfer.getData("text"));
+		if(isNaN(newOrderItemId)) {
+			return;
+		}
+		window.addItemToOrder(newOrderItemId);
+		window.triggerRedraws();
 	}
 
 	componentHTML() {
@@ -38,12 +60,18 @@ class ClientOrderPanel extends HTMLElement {
 			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
 			<span>${totalOrderPrice}</span>
 		</div>
+
+		<div class="paymentButton">
+			<button class="basicButton" data-language-tag="PROCEED_CHEQUE"></button>
+		</div>
 	  </div>
 	`;
 	}
 
 	initEventListeners() {
-
+		const domElement = this.firstElementChild;
+		domElement.addEventListener('drop', this.drop);
+		domElement.addEventListener('dragover', this.allowDrop);
 	}
 
 	connectedCallback() {

@@ -2,6 +2,7 @@ class MenuItem extends HTMLElement {
 	constructor() {
 		super();
 		this.addNumber = 0; // the total number of order to add on the button press
+		this.drag = this.drag.bind(this);
 	}
 
 	getRelatedGlobalStates() {
@@ -9,6 +10,11 @@ class MenuItem extends HTMLElement {
 		} = window.globalState;
 		return {
 		};
+	}
+
+	// Drag event
+	drag(event) {
+		event.dataTransfer.setData("text", event.target.dataset.itemId);
 	}
 
 	componentHTML() {
@@ -26,7 +32,6 @@ class MenuItem extends HTMLElement {
 		const itemDescription = menuItem.description;
 		const alcoholLevel = menuItem.alcoholStrength;
 
-
 		return `
 		<div id="menuItemBorder">
 		  <div id="menuItem" class="menu-item" data-item-id="${itemId}">
@@ -34,7 +39,7 @@ class MenuItem extends HTMLElement {
 	  			<span>${itemName}</span>
 			</div>
 			<div>
-				<img id="menuItemImage" src="${itemImageLink}">
+				<img id="menuItemImage" src="${itemImageLink}" draggable="false">
 			</div>
 			<div>
 				<span data-language-tag="MENU_ITEM_PRICE"></span>
@@ -68,22 +73,11 @@ class MenuItem extends HTMLElement {
 		const itemId = parseInt(this.getAttribute('itemId'));
 
 		addToOrderButton.addEventListener('click', function() {
-			if(window.globalState.clientCurrentOrderArray.some(orderItem => orderItem.itemId === itemId)) {
-				window.globalState.clientCurrentOrderArray.forEach(orderItem => {
-					if(orderItem.itemId === itemId) {
-						orderItem.itemQuantity++;
-					}
-				});
-			}
-			else {
-				window.globalState.clientCurrentOrderArray.push({
-					itemId: itemId,
-					itemQuantity: 1
-				});
-			}
-
+			window.addItemToOrder(itemId);
 			window.triggerRedraws();
 		});
+
+		domElement.addEventListener('dragstart', this.drag);
 	}
 
 	connectedCallback() {

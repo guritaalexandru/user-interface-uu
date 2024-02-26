@@ -5,18 +5,29 @@ class RightPanel extends HTMLElement {
 
 	getRelatedGlobalStates() {
 		const {
+			currentRightPanel
 		} = window.globalState;
 		return {
+			currentRightPanel
 		};
 	}
 
 	componentHTML() {
 		const {
+			currentRightPanel
 		} = this.getRelatedGlobalStates();
 
 		return `
 		  <div id="RightPanel">
-			<menu-wrapper-component></menu-wrapper-component>
+		  		<div class="${currentRightPanel === 'menu' ? '' : 'hide'}">
+		  			<menu-wrapper-component></menu-wrapper-component>
+		  		</div>
+		  		<div class="${currentRightPanel === 'orders' ? '' : 'hide'}">
+		  			<staff-orders-wrapper-component></staff-orders-wrapper-component>
+		  		</div>
+		  		<div class="${currentRightPanel === 'security' ? '' : 'hide'}">
+		  			<security-panel-component></security-panel-component>
+		  		</div>
 		  </div>
 	`;
 	}

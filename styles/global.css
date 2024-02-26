@@ -57,6 +57,29 @@ nav {
   flex: 0 0 30%;
 }
 
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-button {
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px 0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-button:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+
 .right-panel {
   background-color: #c4c4c4;
   flex: 1;
@@ -166,6 +189,10 @@ nav {
   margin: 20px;
 }
 
+.paymentButton {
+  margin: 20px;
+}
+
 /* --- General elements styling --- */
 .basicButton {
   background-color: #4CAF50; /* Green */
@@ -202,24 +229,73 @@ nav {
 
 /* Styling for the menu item images */
 #menuItemImage{
-  width: 10vw;
-  height: auto;
+  width: 100px;
+  height: 100px;
   border: 1px solid;
 }
 
 /* Styling for the rows of items displayed */
 #MenuItemsListing{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minMax(19vw, 1fr));
+  grid-template-columns: repeat(auto-fill, minMax(220px, 1fr));
   gap:10px;
 }
 
 #menuItemTitle{
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
 }
 
-#menuItem{
-  font-size: 1.1vw;
-  background-color: white;
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+

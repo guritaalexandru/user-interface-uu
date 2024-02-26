@@ -1,4 +1,4 @@
-class MainPanel extends HTMLElement {
+class SecurityPanel extends HTMLElement {
 	constructor() {
 		super();
 	}
@@ -15,11 +15,9 @@ class MainPanel extends HTMLElement {
 		} = this.getRelatedGlobalStates();
 
 		return `
-			<div id="MainPanel" class="main-panel">
-			    <left-panel-component class="left-panel"></left-panel-component>
-			    <right-panel-component class="right-panel"></right-panel-component>
-				<payment-popup-component></payment-popup-component>
-			</div>
+	  <div id="SecurityPanel">
+
+	  </div>
 	`;
 	}
 
@@ -51,4 +49,4 @@ class MainPanel extends HTMLElement {
 	}
 }
 
-customElements.define('main-panel-component', MainPanel);
+customElements.define('security-panel-component', SecurityPanel);
