@@ -2,6 +2,8 @@ const globalState = {
 	// Global application state
 	isLoggedIn: false,
 	language: 'en',
+	isCheckoutModalOpen: false,
+	isPayAtTheBarModalOpen: false,
 	userType: 'client', // client, staff, VIP(?)
 	clientOrderActionStackObject: {
 		currentStackPlace: 0,
@@ -23,7 +25,30 @@ const globalState = {
 	menuItems: [],
 
 	// Client state
-	clientCurrentOrderArray: []
+	clientCurrentOrderArray: [],
+
+	// Staff state
+	ordersArray: [
+		// {
+		// 	orderId: 1,
+		// 	tableNumber: 1,
+		// 	orderItems: [
+		// 		{
+		// 			itemId: 1,
+		// 			itemQuantity: 1
+		// 		},
+		// 		{
+		// 			itemId: 2,
+		// 			itemQuantity: 2
+		// 		},
+		// 		{
+		// 			itemId: 3,
+		// 			itemQuantity: 3
+		// 		},
+		// 	],
+		// 	orderStatus: 'pending', // pending, in-progress, complete
+		// },
+	],
 };
 
 window.globalState = globalState;

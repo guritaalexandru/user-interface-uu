@@ -10,8 +10,8 @@ function loadItems(){
 
     var allItems = getAllItems(DB_FILTERED);
     globalState.menuItems = allItems;
-    console.log("Loaded beverages into globalvariables");
-    console.log(globalState.menuItems);
+    // console.log("Loaded beverages into globalvariables");
+    // console.log(globalState.menuItems);
 
 }
 
@@ -51,7 +51,7 @@ function getAllItems(database){
         //sort the item into the broader category names (beer,wine,spirits, alcoholfree)
         // NOTE: IN THE RAW FILES, category is mispelled as catgegory
         var rawCategory =  database[i].catgegory.toLowerCase();
-        console.log(rawCategory)
+        // console.log(rawCategory)
         var finalCategory = findCategory(rawCategory);
 
         var itemNameFull = database[i].name;

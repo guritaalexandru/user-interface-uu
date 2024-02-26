@@ -1,34 +1,32 @@
-class StaffOrdersWrapper extends HTMLElement {
+class PayAtTheBarModal extends HTMLElement {
 	constructor() {
 		super();
 	}
 
 	getRelatedGlobalStates() {
 		const {
-			ordersArray,
 		} = window.globalState;
 		return {
-			ordersArray,
 		};
 	}
 
 	componentHTML() {
 		const {
-			ordersArray,
 		} = this.getRelatedGlobalStates();
 
-		console.log('ordersArray');
-		console.log(ordersArray);
-
 		return `
-	  <div id="StaffOrdersWrapper">
-
+	  <div id="PayAtTheBarModal">
+		<h2 data-language-tag="PAY_AT_THE_BAR"></h2>
+		<button class="basicButton newOrderButton" data-language-tag="NEW_ORDER"></button>
 	  </div>
 	`;
 	}
 
 	initEventListeners() {
-
+		document.querySelector('.newOrderButton').addEventListener('click', function() {
+			window.globalState.isPayAtTheBarModalOpen = false;
+			window.triggerRedraws();
+		});
 	}
 
 	connectedCallback() {
@@ -55,4 +53,4 @@ class StaffOrdersWrapper extends HTMLElement {
 	}
 }
 
-customElements.define('staff-orders-wrapper-component', StaffOrdersWrapper);
+customElements.define('pay-at-the-bar-modal-component', PayAtTheBarModal);
