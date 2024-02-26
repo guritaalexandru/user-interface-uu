@@ -217,10 +217,10 @@ nav {
   border:1px solid;
   border-radius: 5%;
   color: black;
-  padding: 1px;
+  padding: 5px;
   background-color: white;
   width:100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -237,14 +237,19 @@ nav {
 /* Styling for the rows of items displayed */
 #MenuItemsListing{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minMax(220px, 1fr));
-  gap:10px;
+  grid-template-columns: repeat(auto-fill, minMax(180px, 1fr));
+  gap:30px;
 }
 
 #menuItemTitle{
   font-size: 1.1em;
   font-weight: bold;
 }
+
+#menuItem{
+  background-color: white;
+}
+
 
 /* Popup container */
 .popup {
