@@ -28,6 +28,24 @@ function addItemToOrder(itemId) {
 	}
 }
 
+function subtractItemFromOrder(itemId) {
+	window.globalState.clientCurrentOrderArray.forEach(orderItem => {
+		if (orderItem.itemId === itemId) {
+			orderItem.itemQuantity--;
+		}
+
+		if (orderItem.itemQuantity <= 0) {
+			window.globalState.clientCurrentOrderArray = window.globalState.clientCurrentOrderArray.filter(orderItem => orderItem.itemId !== itemId);
+		}
+	});
+}
+
+function removeItemFromOrder(itemId) {
+	window.globalState.clientCurrentOrderArray = window.globalState.clientCurrentOrderArray.filter(orderItem => orderItem.itemId !== itemId);
+}
+
 window.getMenuItemById = getMenuItemById;
 window.getOrderItemById = getOrderItemById;
 window.addItemToOrder = addItemToOrder;
+window.subtractItemFromOrder = subtractItemFromOrder;
+window.removeItemFromOrder = removeItemFromOrder;

@@ -58,12 +58,10 @@ class ClientOrderPanel extends HTMLElement {
 		
 		<div id="ClientOrderTotalPrice" class="total-price">
 			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
-			<span>${totalOrderPrice}</span>
+			<span>  ${totalOrderPrice}</span>
 		</div>
 
-		<div class="paymentButton">
-			<button class="basicButton" data-language-tag="PROCEED_CHEQUE"></button>
-		</div>
+		<button class="basicButton paymentButton" data-language-tag="PROCEED_CHEQUE"></button>
 	  </div>
 	`;
 	}
@@ -72,6 +70,11 @@ class ClientOrderPanel extends HTMLElement {
 		const domElement = this.firstElementChild;
 		domElement.addEventListener('drop', this.drop);
 		domElement.addEventListener('dragover', this.allowDrop);
+
+		domElement.querySelector('.paymentButton').addEventListener('click', function() {
+			window.globalState.isCheckoutModalOpen = true;
+			window.triggerRedraws();
+		});
 	}
 
 	connectedCallback() {

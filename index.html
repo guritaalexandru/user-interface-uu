@@ -9,6 +9,7 @@
 
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="styles/global.css">
+    <link rel="stylesheet" type="text/css" href="styles/clientOrderpanel.css">
 
     <script type="text/javascript" src="Beverages.js"></script>
     <script type="text/javascript" src="Beverages_eng_filtered.js"></script>
@@ -23,6 +24,9 @@
 
 
     <!--Components-->
+    <script src="components/PayAtTheBarModal.js" type="text/javascript" defer></script>
+    <script src="components/CheckoutModal.js" type="text/javascript" defer></script>
+    <script src="components/ModalWrapper.js" type="text/javascript" defer></script>
     <script src="components/Header.js" type="text/javascript" defer></script>
     <script src="components/ClientOrderItem.js" type="text/javascript" defer></script>
     <script src="components/ClientOrderPanel.js" type="text/javascript" defer></script>
@@ -40,11 +44,15 @@
     <!--Language management-->
     <script src="utils/loadLanguage.js"></script>
 
+    <!--Font Awesome CSS document link-->
+    <script src="https://kit.fontawesome.com/34672be568.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
     <header-component></header-component>
     <main-panel-component></main-panel-component>
+    <modal-wrapper-component></modal-wrapper-component>
 </body>
 
 </html>

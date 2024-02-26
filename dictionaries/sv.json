@@ -2,9 +2,9 @@
   "CHANGE_LANGUAGE": "Byt språk",
   "LOGIN": "Logga in",
   "LOGOUT": "Logga ut",
-  "CHANGE_LANGUAGE_ENGLISH": "Engelska",
+  "CHANGE_LANGUAGE_ENGLISH": "English",
   "CHANGE_LANGUAGE_SWEDISH": "Svenska",
-  "CHANGE_LANGUAGE_CHINESE": "Traditionell kinesiska",
+  "CHANGE_LANGUAGE_CHINESE": "繁體中文",
   "CLIENT_ORDER_PANEL_TITLE": "Klientorder",
   "CLIENT_ORDER_ITEM_PRICE": "Pris",
   "CLIENT_ORDER_TOTAL_PRICE": "Totalt pris",
@@ -18,8 +18,13 @@
   "MENU_ITEM_ALCOHOLSTRENGTH": "alkoholhalt",
   "MENU_ITEM_PRODUCER": "Producent",
   "MENU_ITEM_ADD_TO_ORDER": "Lägg till i order",
-  "PROCEED_CHEQUE": "Fortsätt till betalning",
+  "PROCEED_CHEQUE": "Gå till kassan",
   "STAFF_PANEL_MENU": "Meny",
   "STAFF_PANEL_ORDERS": "Ordrar",
-  "STAFF_PANEL_SECURITY": "Säkerhet"
+  "STAFF_PANEL_SECURITY": "Säkerhet",
+  "CHECKOUT_MODAL_TITLE": "Granska din order",
+  "CHECKOUT_MODAL_CHANGE_ORDER": "Ändra order",
+  "CHECKOUT_MODAL_PAY": "Betala",
+  "PAY_AT_THE_BAR": "Betala i baren, tack!",
+  "NEW_ORDER": "Ny order"
 }
