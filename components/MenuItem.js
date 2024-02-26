@@ -34,7 +34,7 @@ class MenuItem extends HTMLElement {
 
 		return `
 		<div id="menuItemBorder">
-		  <div id="menuItem" class="menu-item" data-item-id="${itemId}">
+		  <div id="menuItem" class="menu-item" data-item-id="${itemId} " draggable="true"">
 		  	<div id="menuItemTitle">
 	  			<span>${itemName}</span>
 			</div>
