@@ -64,29 +64,17 @@ class ClientOrderItem extends HTMLElement {
 		const itemId = parseInt(domElement.getAttribute('data-item-id'));
 
 		plusButton.addEventListener('click', function() {
-			window.globalState.clientCurrentOrderArray.forEach(orderItem => {
-				if (orderItem.itemId === itemId) {
-					orderItem.itemQuantity++;
-				}
-			});
+			window.addItemToOrder(itemId);
 			window.triggerRedraws();
 		});
 
 		minusButton.addEventListener('click', function() {
-			window.globalState.clientCurrentOrderArray.forEach(orderItem => {
-				if (orderItem.itemId === itemId) {
-					orderItem.itemQuantity--;
-				}
-
-				if (orderItem.itemQuantity <= 0) {
-					window.globalState.clientCurrentOrderArray = window.globalState.clientCurrentOrderArray.filter(orderItem => orderItem.itemId !== itemId);
-				}
-			});
+			window.subtractItemFromOrder(itemId);
 			window.triggerRedraws();
 		});
 
 		deleteButton.addEventListener('click', function() {
-			window.globalState.clientCurrentOrderArray = window.globalState.clientCurrentOrderArray.filter(orderItem => orderItem.itemId !== itemId);
+			window.removeItemFromOrder(itemId);
 			window.triggerRedraws();
 		});
 	}
