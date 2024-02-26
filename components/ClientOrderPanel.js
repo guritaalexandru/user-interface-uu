@@ -58,7 +58,7 @@ class ClientOrderPanel extends HTMLElement {
 		
 		<div id="ClientOrderTotalPrice" class="total-price">
 			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
-			<span>${totalOrderPrice}</span>
+			<span>  ${totalOrderPrice}</span>
 		</div>
 
 		<div class="paymentButton">
