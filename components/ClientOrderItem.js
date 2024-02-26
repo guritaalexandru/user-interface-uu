@@ -23,32 +23,23 @@ class ClientOrderItem extends HTMLElement {
 		const itemQuantity = orderItem.itemQuantity;
 
 		return `
-	  <div id="ClientOrderItem" class="order-item" data-item-id="${itemId}">
+	  <div id="ClientOrderItem" class="order-item left-panel" data-item-id="${itemId}">
 	  	<div>
 	  		<span>${itemName}</span>
 		</div>
 		<div>
-			<span data-language-tag="CLIENT_ORDER_ITEM_PRICE"></span>
-	  		<span>${itemPrice}</span>
+			<span>$ ${itemPrice}</span>
 		</div>
-		<div>
-	  		<span>${itemQuantity}</span>
-		</div>
-		<div class="plus-minus-buttons">
-			<div>
-				<button class="plusButton" data-item-id="${itemId}">
-					+
-				</button>
-			</div>
-			<div>
-				<button class="minusButton" data-item-id="${itemId}">
-					-
-				</button>
-			</div>
-		</div>
-		<div>
-			<button class="deleteButton" data-item-id="${itemId}">
-				Add delete icon here
+		<div class="right-aligned">
+			<button class="minusButton no-background" data-item-id="${itemId}">
+				<i class="fa-solid fa-minus"></i>
+			</button>
+			<span>${itemQuantity}</span>
+			<button class="plusButton no-background" data-item-id="${itemId}">
+				<i class="fa-solid fa-plus"></i>
+			</button>
+			<button class="deleteButton no-background" data-item-id="${itemId}">
+				<i class="fas fa-trash-alt"></i>
 			</button>
 		</div>
 	  </div>
