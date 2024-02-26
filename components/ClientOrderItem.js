@@ -31,14 +31,14 @@ class ClientOrderItem extends HTMLElement {
 			<span>$ ${itemPrice}</span>
 		</div>
 		<div class="right-aligned">
-			<button class="minusButton no-background" data-item-id="${itemId}">
+			<button class="minusButton" data-item-id="${itemId}">
 				<i class="fa-solid fa-minus"></i>
 			</button>
 			<span>${itemQuantity}</span>
-			<button class="plusButton no-background" data-item-id="${itemId}">
+			<button class="plusButton" data-item-id="${itemId}">
 				<i class="fa-solid fa-plus"></i>
 			</button>
-			<button class="deleteButton no-background" data-item-id="${itemId}">
+			<button class="deleteButton" data-item-id="${itemId}">
 				<i class="fas fa-trash-alt"></i>
 			</button>
 		</div>
