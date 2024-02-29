@@ -7,18 +7,7 @@ const globalState = {
 	userType: 'client', // client, staff, VIP(?)
 	clientOrderActionStackObject: {
 		currentStackPlace: 0,
-		stack: [
-			{
-				action: 'ADD', // ADD, REMOVE
-				itemId: 1,
-				quantity: 1
-			},
-			{
-				action: 'REMOVE', // ADD, REMOVE
-				itemId: 1,
-				quantity: 1
-			},
-		]
+		stack: []
 	},
 	currentMenuTab: 'all', // all, beer, wine, spirits, non-alcoholic
 	currentRightPanel: 'menu', // menu, orders, security (may add more later)

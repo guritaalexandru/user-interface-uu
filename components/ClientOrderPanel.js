@@ -47,6 +47,10 @@ class ClientOrderPanel extends HTMLElement {
 
 		return `
 	  <div id="ClientOrderPanel">
+	  	<div>
+	  		<button class="basicButton undoButton" data-language-tag="UNDO"></button>
+	  		<button class="basicButton redoButton" data-language-tag="REDO"></button>
+		</div>
 		<div class=order-title>
 			<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
 		</div>
@@ -73,6 +77,16 @@ class ClientOrderPanel extends HTMLElement {
 
 		domElement.querySelector('.paymentButton').addEventListener('click', function() {
 			window.globalState.isCheckoutModalOpen = true;
+			window.triggerRedraws();
+		});
+
+		domElement.querySelector('.undoButton').addEventListener('click', function() {
+			window.undoClientOrderAction();
+			window.triggerRedraws();
+		});
+
+		domElement.querySelector('.redoButton').addEventListener('click', function() {
+			window.redoClientOrderAction();
 			window.triggerRedraws();
 		});
 	}
