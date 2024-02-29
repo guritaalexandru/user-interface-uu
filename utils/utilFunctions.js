@@ -44,8 +44,6 @@ function addItemToOrder(itemId, inUndoRedo = false) {
 		});
 		window.globalState.clientOrderActionStackObject.currentStackPlace++;
 	}
-
-	console.log(window.globalState.clientOrderActionStackObject);
 }
 
 function subtractItemFromOrder(itemId, inUndoRedo = false) {
@@ -68,9 +66,6 @@ function subtractItemFromOrder(itemId, inUndoRedo = false) {
 		});
 		window.globalState.clientOrderActionStackObject.currentStackPlace++;
 	}
-
-	console.log(window.globalState.clientOrderActionStackObject);
-
 }
 
 function removeItemFromOrder(itemId, inUndoRedo = false) {
@@ -86,8 +81,6 @@ function removeItemFromOrder(itemId, inUndoRedo = false) {
 	}
 
 	window.globalState.clientCurrentOrderArray = window.globalState.clientCurrentOrderArray.filter(orderItem => orderItem.itemId !== itemId);
-
-	console.log(window.globalState.clientOrderActionStackObject);
 }
 
 function undoClientOrderAction() {
