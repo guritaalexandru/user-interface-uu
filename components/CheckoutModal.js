@@ -23,6 +23,7 @@ class CheckoutModal extends HTMLElement {
 		let totalOrderPrice = 0;
 		clientCurrentOrderArray.forEach(orderItem => {
 			const menuItem = window.getMenuItemById(orderItem.itemId);
+			const itemQuantity = orderItem.itemQuantity;
 			totalOrderPrice += menuItem.itemPrice * orderItem.itemQuantity;
 		});
 
@@ -32,13 +33,15 @@ class CheckoutModal extends HTMLElement {
 		
 		<!--	List items from the order here and style	-->
 
-		<div id="ClientOrderItems">
-			${clientCurrentOrderArray.map(orderItem => `
-				<client-order-item-component itemId="${orderItem.itemId}"></client-order-item-component>
-			`).join('')}
+		<div class="checkout-order-items">
+			<div id="ClientOrderItems">
+				${clientCurrentOrderArray.map(orderItem => `
+					<client-order-item-component itemId="${orderItem.itemId}"></client-order-item-component>
+					<div class="unit-number"><span> Units: ${orderItem.itemQuantity}</span></div>
+				`).join('')}
+			</div>
 		</div>
-		
-		<div id="ClientOrderTotalPrice" class="total-price">
+		<div class="modal-total-price">
 			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
 			<span>  ${totalOrderPrice}</span>
 		</div>
