@@ -29,7 +29,7 @@ class CheckoutModal extends HTMLElement {
 
 		return `
 	  <div id="CheckoutModal">
-		<div data-language-tag="CHECKOUT_MODAL_TITLE"></div>
+		<h2><div data-language-tag="CHECKOUT_MODAL_TITLE"></div></h2>
 		
 		<!--	List items from the order here and style	-->
 
@@ -43,7 +43,7 @@ class CheckoutModal extends HTMLElement {
 		</div>
 		<div class="modal-total-price">
 			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
-			<span>  ${totalOrderPrice}</span>
+			<span> $${totalOrderPrice}</span>
 		</div>
 
 		<button class="basicButton changeOrderButton" data-language-tag="CHECKOUT_MODAL_CHANGE_ORDER"></button>

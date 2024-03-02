@@ -176,6 +176,7 @@ nav {
 
 .checkout-order-items {
   padding: 20px;
+  padding-bottom: 40px;
 }
 
 .checkout-order-items .order-item {
