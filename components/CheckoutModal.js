@@ -5,8 +5,10 @@ class CheckoutModal extends HTMLElement {
 
 	getRelatedGlobalStates() {
 		const {
+			clientCurrentOrderArray
 		} = window.globalState;
 		return {
+			clientCurrentOrderArray
 		};
 	}
 
@@ -14,10 +16,33 @@ class CheckoutModal extends HTMLElement {
 		const {
 		} = this.getRelatedGlobalStates();
 
+		const {
+			clientCurrentOrderArray
+		} = this.getRelatedGlobalStates();
+
+		let totalOrderPrice = 0;
+		clientCurrentOrderArray.forEach(orderItem => {
+			const menuItem = window.getMenuItemById(orderItem.itemId);
+			totalOrderPrice += menuItem.itemPrice * orderItem.itemQuantity;
+		});
+
 		return `
 	  <div id="CheckoutModal">
 		<div data-language-tag="CHECKOUT_MODAL_TITLE"></div>
+		
 		<!--	List items from the order here and style	-->
+
+		<div id="ClientOrderItems">
+			${clientCurrentOrderArray.map(orderItem => `
+				<client-order-item-component itemId="${orderItem.itemId}"></client-order-item-component>
+			`).join('')}
+		</div>
+		
+		<div id="ClientOrderTotalPrice" class="total-price">
+			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
+			<span>  ${totalOrderPrice}</span>
+		</div>
+
 		<button class="basicButton changeOrderButton" data-language-tag="CHECKOUT_MODAL_CHANGE_ORDER"></button>
 		<button class="basicButton payOrderButton" data-language-tag="CHECKOUT_MODAL_PAY"></button>
 	  </div>
