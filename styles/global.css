@@ -271,7 +271,7 @@ nav {
 /* Styling for the rows of items displayed */
 #MenuItemsListing{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minMax(180px, 1fr));
+  grid-template-columns: repeat(3, minMax(180px, 1fr));
   gap:30px;
 }
 
@@ -283,6 +283,29 @@ nav {
 #menuItem{
   background-color: white;
 }
+
+/* Media query for when the screen is bigger */
+/* FOR BIG SCREEN */
+@media screen and (min-width: 1600px){
+  #menuItemImage{
+    width: 120px;
+    height: 120px;
+    border: 1px solid;
+  }
+
+  #menuItemTitle{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  #MenuItemsListing{
+    display: grid;
+    grid-template-columns: repeat(4, minMax(235px, 1fr));
+    gap:30px;
+  }
+}
+
+/* TODO Make a mobile phone resolution version */
 
 
 /* Popup container */

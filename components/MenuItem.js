@@ -31,6 +31,10 @@ class MenuItem extends HTMLElement {
 		const itemProducer = menuItem.producer;
 		const itemDescription = menuItem.description;
 		const alcoholLevel = menuItem.alcoholStrength;
+		const itemVolume = menuItem.itemVolume;
+
+		// Load wether it is a customer or a staff
+		const user = globalState.userType;
 
 		return `
 		<div id="menuItemBorder">
@@ -59,8 +63,15 @@ class MenuItem extends HTMLElement {
 			</div>
 			<!--	TODO: Add to order only available for clients, not staff		-->
 			<div>
-				<button class="addToOrder" data-item-id="${itemId}" data-language-tag="MENU_ITEM_ADD_TO_ORDER"></button>
 				
+				${user =="staff" ? 
+				`
+				<div>	
+					<span data-language-tag="MENU_ITEM_VOLUME"></span>
+					<span>: ${itemVolume} ml</span>
+				</div>
+				<button class="changeStock" data-item-id="${itemId}" data-menu-item = "${menuItem}" data-language-tag="MENU_ITEM_CHANGE_STOCK"></button>`: 
+				`<button class="addToOrder" data-item-id="${itemId}" data-language-tag="MENU_ITEM_ADD_TO_ORDER"></button>`}
 				</div>
 		  </div>
 		<div>
@@ -70,12 +81,44 @@ class MenuItem extends HTMLElement {
 	initEventListeners() {
 		const domElement = this.firstElementChild;
 		const addToOrderButton = domElement.querySelector('.addToOrder');
+		const changeStockButton = domElement.querySelector('.changeStock');
 		const itemId = parseInt(this.getAttribute('itemId'));
+		
+		if (globalState.userType == 'client'){
+			// When the customer presses add to order
+			addToOrderButton.addEventListener('click', function() {
+				window.addItemToOrder(itemId);
+				window.triggerRedraws();
+			});
+		} else{
+			const menuItems = globalState.menuItems;
+			const menuItem = window.getMenuItemById(itemId);
 
-		addToOrderButton.addEventListener('click', function() {
-			window.addItemToOrder(itemId);
-			window.triggerRedraws();
-		});
+			// When the staff presses change stock
+			//TODO: Pop up a text box to key in new stock number
+			
+			changeStockButton.addEventListener('click', function(){
+
+				// prompt user to enter a new stock number
+				let newVolumeStr = prompt("Enter new stock in ml");
+				let newVolume = Number(newVolumeStr);
+				
+				// Catch the error input
+				if (!isNaN(newVolume)){
+					menuItem.itemVolume = newVolume;
+					window.replaceData(menuItem, menuItems);
+					window.triggerRedraws();
+				} else{
+					alert("INVALID INPUT!");
+				}
+				
+				// console.log(menuItems);
+				// window.updateFile("Beverages_new.js",globalState.menuItems); // Does not work without a DB
+				
+			});
+		};
+
+
 
 		domElement.addEventListener('dragstart', this.drag);
 	}

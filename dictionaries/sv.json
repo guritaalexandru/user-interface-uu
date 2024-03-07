@@ -26,5 +26,7 @@
   "CHECKOUT_MODAL_CHANGE_ORDER": "Ändra order",
   "CHECKOUT_MODAL_PAY": "Betala",
   "PAY_AT_THE_BAR": "Betala i baren, tack!",
-  "NEW_ORDER": "Ny order"
+  "NEW_ORDER": "Ny order",
+  "MENU_ITEM_CHANGE_STOCK":"ändra artikel lager",
+  "MENU_ITEM_VOLUME": "Volym"
 }

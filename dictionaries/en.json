@@ -26,5 +26,7 @@
   "CHECKOUT_MODAL_CHANGE_ORDER": "Change Order",
   "CHECKOUT_MODAL_PAY": "Pay",
   "PAY_AT_THE_BAR": "Please pay at the bar!",
-  "NEW_ORDER": "New Order"
+  "NEW_ORDER": "New Order",
+  "MENU_ITEM_CHANGE_STOCK": "Change Stock",
+  "MENU_ITEM_VOLUME": "Volume"
 }
