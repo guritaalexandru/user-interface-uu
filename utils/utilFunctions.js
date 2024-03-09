@@ -76,13 +76,13 @@ function subtractItemFromOrder(itemId, inUndoRedo = false) {
 }
 
 function removeOrderFromOrdersArray(order, inUndoRedo = false) {
-	/*const {
+	const {
 		ordersArray
 	} = window.globalState;
 	const index = ordersArray.indexOf(order);
 	if (index > -1) {
-		array.splice(index, 1);
-	}*/
+		ordersArray.splice(index, 1);
+	}
 }
 
 function removeItemFromOrder(itemId, inUndoRedo = false) {

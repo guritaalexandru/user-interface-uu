@@ -36,6 +36,7 @@ class StaffOrderItem extends HTMLElement {
 	  		<span>Order Status: ${orderStatus}</span>
 		</div>
         <button class="addToOrder markComplete" data-item-id="${orderId}" data-language-tag="MARK_COMPLETE"></button>
+        <button class="addToOrder removeOrder" data-item-id="${orderId}" data-language-tag="REMOVE_ORDER"></button>
 	  </div>
 	`;
 	}
@@ -43,13 +44,16 @@ class StaffOrderItem extends HTMLElement {
 	initEventListeners() {
         const domElement = this.firstElementChild;
         const markCompleteButton = domElement.querySelector('.markComplete');
+		const removeOrderButton = domElement.querySelector('.removeOrder');
         const orderId = parseInt(domElement.getAttribute('data-item-id'));
         const order = window.getOrderById(orderId);
+
         markCompleteButton.addEventListener('click', function() {
-            console.log("clicked");
-            console.log(orderId);
-			//window.removeOrderFromOrdersArray(order);
             order.orderStatus = 'complete';
+            window.triggerRedraws();
+		});
+		removeOrderButton.addEventListener('click', function() {
+			window.removeOrderFromOrdersArray(order);
             window.triggerRedraws();
 		});
 	}

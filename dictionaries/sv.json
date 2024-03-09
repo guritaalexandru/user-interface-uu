@@ -30,5 +30,6 @@
   "UNDO": "Ångra",
   "REDO": "Gör om",
   "STAFF_ORDER_PANEL_TITLE": "Utestående beställningar",
-  "MARK_COMPLETE": "Markera Komplett"
+  "MARK_COMPLETE": "Markera Komplett",
+  "REMOVE_ORDER": "Avlägsna"
 }
