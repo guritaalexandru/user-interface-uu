@@ -38,6 +38,7 @@ class Header extends HTMLElement {
 	  </header>
 
 	<div id="login-form" class="login-form hide">
+		<button id="closeButton" class="closeButton" onclick="closeLoginForm()">X</button>
 		<div id="login-form-title" data-language-tag="LOGIN_FORM"></div>
 	  	
 		<form>
@@ -79,19 +80,11 @@ class Header extends HTMLElement {
 				window.globalState.userType = 'client';
 				window.triggerRedraws();
 			}
+		});
 
-
-
-			// if (window.globalState.isLoggedIn) {
-			// 	window.globalState.isLoggedIn = false;
-			// 	window.globalState.userType = 'client';
-			// } else {
-
-			// 	// userInfo = window.loginAccount();
-			// 	window.globalState.isLoggedIn = true;
-			// 	window.globalState.userType = 'staff';
-			// }
-			// window.triggerRedraws();
+		document.getElementById("closeButton").addEventListener('click',function(){
+			const loginForm = document.getElementById('login-form');
+			loginForm.classList.add('hide');
 		});
 
 

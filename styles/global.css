@@ -326,6 +326,12 @@ nav {
   font-weight: bold;
 }
 
+#closeButton{
+  position: absolute;
+  top:5px;
+  right: 5px;
+}
+
 #login-form form {
   display: inline-block; /* Make the form display as inline block */
 }
