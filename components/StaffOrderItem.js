@@ -35,8 +35,8 @@ class StaffOrderItem extends HTMLElement {
         <div>
 	  		<span>Order Status: ${orderStatus}</span>
 		</div>
-        <button class="addToOrder markComplete" data-item-id="${orderId}" data-language-tag="MARK_COMPLETE"></button>
-        <button class="addToOrder removeOrder" data-item-id="${orderId}" data-language-tag="REMOVE_ORDER"></button>
+		<button class="addToOrder markComplete" data-item-id="${orderId}" data-language-tag="MARK_COMPLETE"></button>
+		<button class="deleteButton removeOrder" data-item-id="${orderId}" data-language-tag="REMOVE_ORDER"></button>
 	  </div>
 	`;
 	}
