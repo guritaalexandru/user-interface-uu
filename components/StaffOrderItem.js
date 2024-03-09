@@ -18,8 +18,6 @@ class StaffOrderItem extends HTMLElement {
 
 		const orderId = parseInt(this.getAttribute('orderId'));
         const order = window.getOrderById(orderId);
-        console.log("hmm");
-        console.log(order);
 		const tableNumber = parseInt(this.getAttribute('tableNumber'));
         const orderStatus = this.getAttribute('orderStatus');
         //const orderStatus = orderItem.orderStatus;
@@ -36,7 +34,7 @@ class StaffOrderItem extends HTMLElement {
         <div>
 	  		<span>Order Status: ${orderStatus}</span>
 		</div>
-        <button class="basicButton changeOrderButton" data-language-tag="MARK_COMPLETE"></button>
+        <button class="addToOrder markComplete" data-language-tag="MARK_COMPLETE"></button>
 	  </div>
 	`;
 	}
