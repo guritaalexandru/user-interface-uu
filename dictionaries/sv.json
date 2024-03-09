@@ -28,5 +28,7 @@
   "PAY_AT_THE_BAR": "Betala i baren, tack!",
   "NEW_ORDER": "Ny order",
   "UNDO": "Ångra",
-  "REDO": "Gör om"
+  "REDO": "Gör om",
+  "GUARD": "Meddela vakten",
+  "POLICE": "Ring polisen"
 }

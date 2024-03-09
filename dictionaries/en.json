@@ -1,5 +1,5 @@
 {
-  "CHANGE_LANGUAGE": "Change Language",
+  "CHANGE_LANGUAGE": "Language",
   "LOGIN": "Login",
   "LOGOUT": "Logout",
   "CHANGE_LANGUAGE_ENGLISH": "English",
@@ -28,5 +28,7 @@
   "PAY_AT_THE_BAR": "Please pay at the bar!",
   "NEW_ORDER": "New Order",
   "UNDO": "Undo",
-  "REDO": "Redo"
+  "REDO": "Redo",
+  "GUARD": "notify the guard",
+  "POLICE": "call the police"
 }
