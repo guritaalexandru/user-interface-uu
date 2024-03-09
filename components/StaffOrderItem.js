@@ -18,9 +18,10 @@ class StaffOrderItem extends HTMLElement {
 
 		const orderId = parseInt(this.getAttribute('orderId'));
         const order = window.getOrderById(orderId);
-		const tableNumber = parseInt(this.getAttribute('tableNumber'));
-        const orderStatus = this.getAttribute('orderStatus');
-        //const orderStatus = orderItem.orderStatus;
+		//const tableNumber = parseInt(this.getAttribute('tableNumber'));
+        //const orderStatus = this.getAttribute('orderStatus');
+        const orderStatus = order.orderStatus;
+        const tableNumber = order.tableNumber;
 
 		return `
         <div id="StaffOrderItem" class="staff-order-item" data-item-id="${orderId}">
@@ -34,12 +35,23 @@ class StaffOrderItem extends HTMLElement {
         <div>
 	  		<span>Order Status: ${orderStatus}</span>
 		</div>
-        <button class="addToOrder markComplete" data-language-tag="MARK_COMPLETE"></button>
+        <button class="addToOrder markComplete" data-item-id="${orderId}" data-language-tag="MARK_COMPLETE"></button>
 	  </div>
 	`;
 	}
 
 	initEventListeners() {
+        const domElement = this.firstElementChild;
+        const markCompleteButton = domElement.querySelector('.markComplete');
+        const orderId = parseInt(domElement.getAttribute('data-item-id'));
+        const order = window.getOrderById(orderId);
+        markCompleteButton.addEventListener('click', function() {
+            console.log("clicked");
+            console.log(orderId);
+			//window.removeOrderFromOrdersArray(order);
+            order.orderStatus = 'complete';
+            window.triggerRedraws();
+		});
 	}
 
 	connectedCallback() {

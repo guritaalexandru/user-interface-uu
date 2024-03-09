@@ -16,7 +16,7 @@ function getOrderById(orderId) {
 	const {
 		ordersArray
 	} = window.globalState;
-	return ordersArray.find(order => order.orderID === orderId);
+	return ordersArray.find(order => order.orderId === orderId);
 }
 
 function trimClientOrderActionStack() {
@@ -75,6 +75,16 @@ function subtractItemFromOrder(itemId, inUndoRedo = false) {
 	}
 }
 
+function removeOrderFromOrdersArray(order, inUndoRedo = false) {
+	/*const {
+		ordersArray
+	} = window.globalState;
+	const index = ordersArray.indexOf(order);
+	if (index > -1) {
+		array.splice(index, 1);
+	}*/
+}
+
 function removeItemFromOrder(itemId, inUndoRedo = false) {
 	if(!inUndoRedo) {
 		trimClientOrderActionStack();
@@ -130,3 +140,4 @@ window.subtractItemFromOrder = subtractItemFromOrder;
 window.removeItemFromOrder = removeItemFromOrder;
 window.undoClientOrderAction = undoClientOrderAction;
 window.redoClientOrderAction = redoClientOrderAction;
+window.removeOrderFromOrdersArray = removeOrderFromOrdersArray;

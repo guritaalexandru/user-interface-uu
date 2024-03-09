@@ -27,7 +27,7 @@ class StaffOrdersWrapper extends HTMLElement {
   		</div>
 		<div id="StaffOrderItems">
 			${ordersArray.map(orderItem => `
-				<staff-order-item-component orderId="${orderItem.orderId}" tableNumber="${orderItem.tableNumber}" orderStatus="${orderItem.orderStatus}"></staff-order-item-component>
+				<staff-order-item-component orderId="${orderItem.orderId}"></staff-order-item-component>
 			`).join('')}
 		</div>
 
