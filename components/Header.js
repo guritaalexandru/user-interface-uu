@@ -36,6 +36,24 @@ class Header extends HTMLElement {
 				</button>
 		</nav>
 	  </header>
+
+	<div id="login-form" class="login-form hide">
+		<div id="login-form-title" data-language-tag="LOGIN_FORM"></div>
+	  	
+		<form>
+			<fieldset>
+				<label for="username" data-language-tag="ENTER_USERNAME">: </label>
+				<input type="text" name="username" id="username" class="text">
+				<label for="password" data-language-tag="ENTER_PASSWORD">: </label>
+				<input type="text" name="password" id="password" class="text">
+			</fieldset>
+
+		<p id="inputWarning" class="inputWarning hide" data-language-tag="ACCOUNT_WARNING"></p>
+			
+		</form><button id="EnterAccountButton" data-language-tag="LOGIN" class="basicButton"></button>
+		
+	</div>
+
 	`;
 	}
 
@@ -48,14 +66,56 @@ class Header extends HTMLElement {
 			});
 		});
 		document.getElementById('LoginButton').addEventListener('click', function() {
-			if (window.globalState.isLoggedIn) {
+
+
+			// If the user is not logged in
+			if (!window.globalState.isLoggedIn) {
+				event.preventDefault();
+				const loginForm = document.getElementById('login-form');
+				loginForm.classList.remove('hide'); // show the login form
+				console.log("displaying login form");
+			}else{
 				window.globalState.isLoggedIn = false;
 				window.globalState.userType = 'client';
-			} else {
+				window.triggerRedraws();
+			}
+
+
+
+			// if (window.globalState.isLoggedIn) {
+			// 	window.globalState.isLoggedIn = false;
+			// 	window.globalState.userType = 'client';
+			// } else {
+
+			// 	// userInfo = window.loginAccount();
+			// 	window.globalState.isLoggedIn = true;
+			// 	window.globalState.userType = 'staff';
+			// }
+			// window.triggerRedraws();
+		});
+
+
+		document.getElementById('EnterAccountButton').addEventListener('click', function(){
+			// When the second login button is clicked
+			const inputWarning = document.getElementById("inputWarning");
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+
+			console.log("Username:", username);
+			console.log("Password:", password);
+			let userInfo;
+			userInfo = window.loginAccount(username,password)
+			if (userInfo == null){
+				inputWarning.classList.remove('hide');
+
+			}
+			else{
 				window.globalState.isLoggedIn = true;
 				window.globalState.userType = 'staff';
+				window.triggerRedraws();
 			}
-			window.triggerRedraws();
+
+
 		});
 	}
 

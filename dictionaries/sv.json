@@ -28,5 +28,9 @@
   "PAY_AT_THE_BAR": "Betala i baren, tack!",
   "NEW_ORDER": "Ny order",
   "MENU_ITEM_CHANGE_STOCK":"ändra artikel lager",
-  "MENU_ITEM_VOLUME": "Volym"
+  "MENU_ITEM_VOLUME": "Volym",
+  "ENTER_USERNAME": "Användarnamn",
+  "ENTER_PASSWORD": "Lösenord",
+  "LOGIN_FORM":"Logga in på konto",
+  "ACCOUNT_WARNING": "Ogiltigt användarnamn eller lösenord!"
 }

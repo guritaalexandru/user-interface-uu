@@ -28,5 +28,9 @@
   "PAY_AT_THE_BAR": "Please pay at the bar!",
   "NEW_ORDER": "New Order",
   "MENU_ITEM_CHANGE_STOCK": "Change Stock",
-  "MENU_ITEM_VOLUME": "Volume"
+  "MENU_ITEM_VOLUME": "Volume",
+  "ENTER_USERNAME": "Username",
+  "ENTER_PASSWORD": "Password",
+  "LOGIN_FORM":"Login to account",
+  "ACCOUNT_WARNING": "Invalid Username or Password!"
 }
