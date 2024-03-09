@@ -45,23 +45,34 @@ class ClientOrderPanel extends HTMLElement {
 			totalOrderPrice += menuItem.itemPrice * orderItem.itemQuantity;
 		});
 
+		totalOrderPrice = totalOrderPrice.toFixed(2);
+
 		return `
 	  <div id="ClientOrderPanel">
-		<div class=order-title>
-			<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
+	  	<div id="ClientOrderPanelWrapper">
+	  	  	<div>
+		        <button class="basicButton undoButton" data-language-tag="UNDO"></button>
+		        <button class="basicButton redoButton" data-language-tag="REDO"></button>
+			</div>
+			<div class=order-title>
+				<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
+			</div>
+			<div id="ClientOrderItems">
+				${clientCurrentOrderArray.map(orderItem => `
+					<client-order-item-component itemId="${orderItem.itemId}"></client-order-item-component>
+				`).join('')}
+			</div>
 		</div>
-		<div id="ClientOrderItems">
-			${clientCurrentOrderArray.map(orderItem => `
-				<client-order-item-component itemId="${orderItem.itemId}"></client-order-item-component>
-			`).join('')}
+	
+	  	<div id="ClientOrderTotalPriceContainer">
+		    <div id="ClientOrderTotalPriceWrapper">
+		         <div id="ClientOrderTotalPrice">
+					<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
+					<span> $${totalOrderPrice}</span>
+				</div>
+				<button class="basicButton paymentButton" data-language-tag="PROCEED_CHEQUE"></button>
+			</div>
 		</div>
-		
-		<div id="ClientOrderTotalPrice" class="total-price">
-			<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
-			<span>  ${totalOrderPrice}</span>
-		</div>
-
-		<button class="basicButton paymentButton" data-language-tag="PROCEED_CHEQUE"></button>
 	  </div>
 	`;
 	}
@@ -73,6 +84,16 @@ class ClientOrderPanel extends HTMLElement {
 
 		domElement.querySelector('.paymentButton').addEventListener('click', function() {
 			window.globalState.isCheckoutModalOpen = true;
+			window.triggerRedraws();
+		});
+
+		domElement.querySelector('.undoButton').addEventListener('click', function() {
+			window.undoClientOrderAction();
+			window.triggerRedraws();
+		});
+
+		domElement.querySelector('.redoButton').addEventListener('click', function() {
+			window.redoClientOrderAction();
 			window.triggerRedraws();
 		});
 	}

@@ -27,6 +27,8 @@
   "CHECKOUT_MODAL_PAY": "Pay",
   "PAY_AT_THE_BAR": "Please pay at the bar!",
   "NEW_ORDER": "New Order",
+  "UNDO": "Undo",
+  "REDO": "Redo",
   "MENU_ITEM_CHANGE_STOCK": "Change Stock",
   "MENU_ITEM_VOLUME": "Volume",
   "ENTER_USERNAME": "Username",

@@ -1,5 +1,20 @@
 body{
   position: relative;
+  margin: 0;
+}
+
+#MainContainer{
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+}
+
+#MainWrapper,
+#RightPanel,
+#LeftPanel{
+  height: calc(100vh - 60px);
+  overflow: auto;
+  position: relative;
 }
 
 /* Utility Classes */
@@ -39,10 +54,12 @@ body{
 
 /* --- Header styling --- */
 nav {
-  background-color: black;
-  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  height: 60px;
+  background-color: black;
+  padding: 0 20px;
 }
 
 #LanguageButton {
@@ -174,6 +191,24 @@ nav {
   gap: 5px;
 }
 
+.checkout-order-items {
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.checkout-order-items .order-item {
+  background-color: #e3e3e3;
+  margin-bottom: 40px;
+}
+
+.checkout-order-items .order-item .right-aligned {
+  display: none;
+}
+
+.unit-number {
+  margin-left: 20px;
+}
+
 .plusButton {
   background-color: #e3e3e3;
   border: none;
@@ -217,14 +252,6 @@ nav {
   font-size: 12px;
   cursor: pointer;
   border-radius: 5px;
-}
-
-.total-price {
-  margin: 20px;
-}
-
-.paymentButton {
-  margin: 20px;
 }
 
 /* --- General elements styling --- */
