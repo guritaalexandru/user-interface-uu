@@ -336,6 +336,7 @@ nav {
 
 /* Styling for the login box */
 #login-form {
+  z-index: 100;
   position: fixed;
   top: 50%;
   left: 50%;
