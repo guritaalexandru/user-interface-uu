@@ -205,6 +205,16 @@ nav {
   display: none;
 }
 
+.staff-order-item {
+  background-color: white;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .unit-number {
   margin-left: 20px;
 }

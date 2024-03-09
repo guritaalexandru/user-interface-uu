@@ -68,6 +68,8 @@ class CheckoutModal extends HTMLElement {
 					tableNumber: 1
 				}
 			);
+			//console.log("test");
+			//console.log(window.globalState.ordersArray);
 
 			window.globalState.clientCurrentOrderArray = [];
 			window.triggerRedraws();

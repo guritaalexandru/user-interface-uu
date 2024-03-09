@@ -28,5 +28,7 @@
   "PAY_AT_THE_BAR": "Please pay at the bar!",
   "NEW_ORDER": "New Order",
   "UNDO": "Undo",
-  "REDO": "Redo"
+  "REDO": "Redo",
+  "STAFF_ORDER_PANEL_TITLE": "Outstanding Orders",
+  "MARK_COMPLETE": "Mark Complete"
 }

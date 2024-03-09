@@ -12,6 +12,13 @@ function getOrderItemById(itemId) {
 	return clientCurrentOrderArray.find(orderItem => orderItem.itemId === itemId);
 }
 
+function getOrderById(orderId) {
+	const {
+		ordersArray
+	} = window.globalState;
+	return ordersArray.find(order => order.orderID === orderId);
+}
+
 function trimClientOrderActionStack() {
 	const currentStackPlace = window.globalState.clientOrderActionStackObject.currentStackPlace;
 
@@ -117,6 +124,7 @@ function redoClientOrderAction() {
 
 window.getMenuItemById = getMenuItemById;
 window.getOrderItemById = getOrderItemById;
+window.getOrderById = getOrderById;
 window.addItemToOrder = addItemToOrder;
 window.subtractItemFromOrder = subtractItemFromOrder;
 window.removeItemFromOrder = removeItemFromOrder;

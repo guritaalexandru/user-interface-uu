@@ -1,4 +1,4 @@
-class StaffOrdersWrapper extends HTMLElement {
+class StaffOrderItem extends HTMLElement {
 	constructor() {
 		super();
 	}
@@ -13,32 +13,35 @@ class StaffOrdersWrapper extends HTMLElement {
 	}
 
 	componentHTML() {
-		const {
-			ordersArray,
+        const {
 		} = this.getRelatedGlobalStates();
 
-		console.log('ordersArray');
-		console.log(ordersArray);
+		const orderId = parseInt(this.getAttribute('orderId'));
+        const order = window.getOrderById(orderId);
+        console.log("hmm");
+        console.log(order);
+		const tableNumber = parseInt(this.getAttribute('tableNumber'));
+        const orderStatus = this.getAttribute('orderStatus');
+        //const orderStatus = orderItem.orderStatus;
 
 		return `
-	  <div id="StaffOrdersWrapper">
-	  	<div class=order-title>
-	  		<h2 data-language-tag="STAFF_ORDER_PANEL_TITLE"></h2>
-  		</div>
-		<div id="StaffOrderItems">
-			${ordersArray.map(orderItem => `
-				<staff-order-item-component orderId="${orderItem.orderId}" tableNumber="${orderItem.tableNumber}" orderStatus="${orderItem.orderStatus}"></staff-order-item-component>
-			`).join('')}
+        <div id="StaffOrderItem" class="staff-order-item" data-item-id="${orderId}">
+
+	  	<div>
+	  		<span>Order ID: ${orderId}</span>
 		</div>
-
-
+        <div>
+	  		<span>Table Number: ${tableNumber}</span>
+		</div>
+        <div>
+	  		<span>Order Status: ${orderStatus}</span>
+		</div>
+        <button class="basicButton changeOrderButton" data-language-tag="MARK_COMPLETE"></button>
 	  </div>
-		
 	`;
 	}
 
 	initEventListeners() {
-
 	}
 
 	connectedCallback() {
@@ -65,4 +68,4 @@ class StaffOrdersWrapper extends HTMLElement {
 	}
 }
 
-customElements.define('staff-orders-wrapper-component', StaffOrdersWrapper);
+customElements.define('staff-order-item-component', StaffOrderItem);
