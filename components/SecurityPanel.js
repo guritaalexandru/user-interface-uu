@@ -1,52 +1,76 @@
 class SecurityPanel extends HTMLElement {
-	constructor() {
-		super();
-	}
+    constructor() {
+        super()
+    }
 
-	getRelatedGlobalStates() {
-		const {
-		} = window.globalState;
-		return {
-		};
-	}
+    getRelatedGlobalStates() {
+        const {} = window.globalState
+        return {}
+    }
 
-	componentHTML() {
-		const {
-		} = this.getRelatedGlobalStates();
+    componentHTML() {
+        const {} = this.getRelatedGlobalStates()
 
-		return `
-	  <div id="SecurityPanel">
+        return `
+		<div id="SecurityPanel">
+			<i class="fa-solid fa-phone"></i>
+			<button class="basicButton notifyGuardButton" data-language-tag="GUARD"></button>
+			<i class="fa-solid fa-phone"></i>
+			<button class="basicButton callPoliceButton" data-language-tag="POLICE"></button>
+		</div>
+		`
+    }
 
-	  </div>
-	`;
-	}
+    initEventListeners() {
+        const domElement = this.firstElementChild
 
-	initEventListeners() {
+        domElement
+            .querySelector(".notifyGuardButton")
+            .addEventListener("click", function() {
+                window.globalState.isSecrityModalOpen = true
+                window.triggerRedraws()
 
-	}
+                const modal = document.querySelector("security-modal-component")
+                if (modal) {
+                    modal.showMessage("Notifying the Guard...")
+                }
+            })
 
-	connectedCallback() {
-		this.innerHTML = this.componentHTML();
-		this.initEventListeners();
-	}
+        domElement
+            .querySelector(".callPoliceButton")
+            .addEventListener("click", function() {
+                window.globalState.isSecrityModalOpen = true
+                window.triggerRedraws()
 
-	attributeChangedCallback(name, oldValue, newValue) {
-		// Called when an observed attribute has been added, removed, updated, or replaced
-		if (name === 'trigger-redraw') {
-			this.innerHTML = this.componentHTML();
-			this.initEventListeners();
-		}
-	}
+				const modal = document.querySelector("security-modal-component")
+                if (modal) {
+                    modal.showMessage("Calling the Police...")
+                }
+            })
+    }
 
-	disconnectedCallback() {
-		// Called when the element is removed from the DOM
-		// Clean up any event listeners or resources here
-	}
+    connectedCallback() {
+        this.innerHTML = this.componentHTML()
+        this.initEventListeners()
+    }
 
-	static get observedAttributes() {
-		// Specify which attributes to observe for changes
-		return ['trigger-redraw'];
-	}
+    attributeChangedCallback(name, oldValue, newValue) {
+        // Called when an observed attribute has been added, removed, updated, or replaced
+        if (name === "trigger-redraw") {
+            this.innerHTML = this.componentHTML()
+            this.initEventListeners()
+        }
+    }
+
+    disconnectedCallback() {
+        // Called when the element is removed from the DOM
+        // Clean up any event listeners or resources here
+    }
+
+    static get observedAttributes() {
+        // Specify which attributes to observe for changes
+        return ["trigger-redraw"]
+    }
 }
 
-customElements.define('security-panel-component', SecurityPanel);
+customElements.define("security-panel-component", SecurityPanel)
