@@ -59,9 +59,9 @@ function getAllItems(database){
             itemNameFull += (" " + database[i].name2);
         }
 
-        var itemVolume = database[i].volumeml;
-        if (itemVolume == null){
-            itemVolume = 1000;
+        var itemStock = database[i].itemStock;
+        if (itemStock == null){
+            itemStock = 500;
         }
 
         collector.push(
@@ -76,7 +76,8 @@ function getAllItems(database){
                     published: publishedvar,
                     deleted: deletedvar,
                     itemImage:  imageLinks[finalCategory],
-                    itemVolume: itemVolume
+                    itemStock: itemStock,
+                    showItem: true
                 }
             );
     };

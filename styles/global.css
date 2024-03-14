@@ -66,6 +66,13 @@ nav {
   margin-right: 10px;
 }
 
+/* Account balance */
+#accountBalance {
+  color: white;
+  margin-left: auto;
+  padding-right: 10px;
+}
+
 /* Hide the dropdown content by default */
 .dropdown-content {
   display: none;
@@ -295,12 +302,12 @@ nav {
   border: 1px solid;
 }
 
-/* Styling for the rows of items displayed */
+/* Styling for the rows of items displayed
 #MenuItemsListing{
   display: grid;
   grid-template-columns: repeat(3, minMax(180px, 1fr));
   gap:30px;
-}
+} */
 
 #menuItemTitle{
   font-size: 1.1em;
@@ -310,6 +317,10 @@ nav {
 #menuItem{
   background-color: white;
 }
+
+
+
+
 
 /* Media query for when the screen is bigger */
 /* FOR BIG SCREEN */
@@ -332,7 +343,45 @@ nav {
   }
 }
 
-/* TODO Make a mobile phone resolution version */
+/* normal screen */
+@media screen and (min-width: 800px ) and (max-width: 1600px){
+  #menuItemImage{
+    width: 120px;
+    height: 120px;
+    border: 1px solid;
+  }
+
+  #menuItemTitle{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  #MenuItemsListing{
+    display: grid;
+    grid-template-columns: repeat(3, minMax(235px, 1fr));
+    gap:30px;
+  }
+}
+
+@media screen and (max-width:799px){
+  #menuItemImage{
+    width: 80px;
+    height: 80px;
+    border: 1px solid;
+  }
+
+  #menuItemTitle{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  #MenuItemsListing{
+    display: grid;
+    grid-template-columns: repeat(2, minMax(120px, 1fr));
+    gap:30px;
+  }
+}
+
 
 /* Styling for the login box */
 #login-form {
@@ -379,6 +428,14 @@ nav {
 #EnterAccountButton{
   gap: 30px;
   margin-top: 20px;
+}
+
+#username{
+  width:200px
+}
+
+#password{
+  width: 200px
 }
 
 

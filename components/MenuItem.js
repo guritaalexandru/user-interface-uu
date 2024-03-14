@@ -31,7 +31,8 @@ class MenuItem extends HTMLElement {
 		const itemProducer = menuItem.producer;
 		const itemDescription = menuItem.description;
 		const alcoholLevel = menuItem.alcoholStrength;
-		const itemVolume = menuItem.itemVolume;
+		const itemStock = menuItem.itemStock;
+		const showItem = menuItem.showItem;
 
 		// Load wether it is a customer or a staff
 		const user = globalState.userType;
@@ -67,11 +68,12 @@ class MenuItem extends HTMLElement {
 				${user =="staff" ? 
 				`
 				<div>	
-					<span data-language-tag="MENU_ITEM_VOLUME"></span>
-					<span>: ${itemVolume} ml</span>
+					<span data-language-tag="MENU_ITEM_STOCK"></span>
+					<span>: ${itemStock}</span>
 				</div>
 				<button class="changeStock" data-item-id="${itemId}" data-menu-item = "${menuItem}" data-language-tag="MENU_ITEM_CHANGE_STOCK"></button>`: 
-				`<button class="addToOrder" data-item-id="${itemId}" data-language-tag="MENU_ITEM_ADD_TO_ORDER"></button>`}
+				`<button class="addToOrder" data-item-id="${itemId}" data-language-tag="MENU_ITEM_ADD_TO_ORDER"></button>`
+			}
 				</div>
 		  </div>
 		<div>

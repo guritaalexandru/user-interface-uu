@@ -6,16 +6,23 @@ class Header extends HTMLElement {
 	getRelatedGlobalStates() {
 		const {
 			isLoggedIn,
+			userType,
+			currentUser,
 		} = window.globalState;
 		return {
 			isLoggedIn,
+			userType,
+			currentUser,
 		};
 	}
 
 	componentHTML() {
 		const {
 			isLoggedIn,
+			userType,
+			currentUser,
 		} = this.getRelatedGlobalStates();
+		console.log("WEE WOO " + userType);
 
 		return `
 	  <header id="Header">
@@ -29,6 +36,11 @@ class Header extends HTMLElement {
 			        	<!-- Add more language options as needed -->
 			      	</div>
 			    </div>
+
+				<div id="accountBalance" class="${userType == 'vip' ? '' : 'hide'}">
+					<span data-language-tag="ACCOUNT_BALANCE_TEXT">:</span>
+					<span>${userType === 'vip' ? currentUser.balance +" sek" : ''}</span>
+				</div>
 				
 				<button id="LoginButton" class="basicButton">
 	                <span data-language-tag="LOGIN" class="${isLoggedIn ? 'hide' : ''}"></span>
@@ -46,7 +58,7 @@ class Header extends HTMLElement {
 				<label for="username" data-language-tag="ENTER_USERNAME">: </label>
 				<input type="text" name="username" id="username" class="text">
 				<label for="password" data-language-tag="ENTER_PASSWORD">: </label>
-				<input type="text" name="password" id="password" class="text">
+				<input type="password" name="password" id="password" class="text">
 			</fieldset>
 
 		<p id="inputWarning" class="inputWarning hide" data-language-tag="ACCOUNT_WARNING"></p>
@@ -76,8 +88,10 @@ class Header extends HTMLElement {
 				loginForm.classList.remove('hide'); // show the login form
 				console.log("displaying login form");
 			}else{
+				// If the user is logged in
 				window.globalState.isLoggedIn = false;
-				window.globalState.userType = 'client';
+				window.globalState.userType = 'client'; // Reset the user type
+				window.globalState.currentUser = null; // Set the current user to empty
 				window.triggerRedraws();
 			}
 		});
@@ -98,13 +112,22 @@ class Header extends HTMLElement {
 			console.log("Password:", password);
 			let userInfo;
 			userInfo = window.loginAccount(username,password)
+			console.log(userInfo);
+			window.globalState.currentUser = userInfo; // STORE the user info into the log in
 			if (userInfo == null){
 				inputWarning.classList.remove('hide');
 
 			}
-			else{
+			else if (userInfo.staff){
 				window.globalState.isLoggedIn = true;
+				console.log("Logged in as staff")
 				window.globalState.userType = 'staff';
+				window.triggerRedraws();
+			}
+			else {
+				window.globalState.isLoggedIn = true;
+				console.log("Logged in as VIP")
+				window.globalState.userType = 'vip';
 				window.triggerRedraws();
 			}
 

@@ -30,7 +30,7 @@
   "UNDO": "Ångra",
   "REDO": "Gör om",
   "MENU_ITEM_CHANGE_STOCK":"ändra artikel lager",
-  "MENU_ITEM_VOLUME": "Volym",
+  "MENU_ITEM_STOCK": "Stock",
   "ENTER_USERNAME": "Användarnamn",
   "ENTER_PASSWORD": "Lösenord",
   "LOGIN_FORM":"Logga in på konto",

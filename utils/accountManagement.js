@@ -20,9 +20,12 @@ function loginAccount(username, password){
     
 }
 
+// Function to change the balance of the user
+function changeBalance(user, changeAmmount){
+    user.balance += changeAmmount;
+}
 
 // Taken from loader
-
 function allUserNames() {
     var nameCollect = [];
     for (i = 0; i < DB.users.length; i++) {
@@ -48,6 +51,9 @@ function userDetails(userName) {
         };
     };
 
+    // check if it is a staff member
+
+
     // We get the current account status from another table in the database, account. We store this in
     // a variable here for convenience.
     //
@@ -66,7 +72,10 @@ function userDetails(userName) {
             firstName : DB.users[userIndex].first_name,
             lastName : DB.users[userIndex].last_name,
             email : DB.users[userIndex].email,
-            password : DB.users[userIndex].password
+            password : DB.users[userIndex].password,
+            balance : account,
+            staff :  DB.users[userIndex].staff
+            
         }
     );
 
@@ -75,3 +84,4 @@ function userDetails(userName) {
 
 
 window.loginAccount = loginAccount;
+window.changeBalance = changeBalance;

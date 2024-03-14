@@ -30,9 +30,10 @@
   "UNDO": "Undo",
   "REDO": "Redo",
   "MENU_ITEM_CHANGE_STOCK": "Change Stock",
-  "MENU_ITEM_VOLUME": "Volume",
+  "MENU_ITEM_STOCK": "Stock",
   "ENTER_USERNAME": "Username",
   "ENTER_PASSWORD": "Password",
   "LOGIN_FORM":"Login to account",
-  "ACCOUNT_WARNING": "Invalid Username or Password!"
+  "ACCOUNT_WARNING": "Invalid Username or Password!",
+  "ACCOUNT_BALANCE_TEXT": "Balance: "
 }
