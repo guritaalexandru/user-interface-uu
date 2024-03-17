@@ -37,7 +37,7 @@ class MenuItem extends HTMLElement {
 		// Load wether it is a customer or a staff
 		const user = globalState.userType;
 
-		return `
+		if (itemStock>0) {return `
 		<div id="menuItemBorder">
 		  <div id="menuItem" class="menu-item" data-item-id="${itemId} " draggable="true"">
 		  	<div id="menuItemTitle">
@@ -77,7 +77,9 @@ class MenuItem extends HTMLElement {
 				</div>
 		  </div>
 		<div>
-	`;
+	`;}else{
+		return "";
+	}
 	}
 
 	initEventListeners() {
@@ -85,12 +87,14 @@ class MenuItem extends HTMLElement {
 		const addToOrderButton = domElement.querySelector('.addToOrder');
 		const changeStockButton = domElement.querySelector('.changeStock');
 		const itemId = parseInt(this.getAttribute('itemId'));
+
 		
-		if (globalState.userType == 'client'){
+		if (globalState.userType == 'client' || globalState.userType == 'vip'){
 			// When the customer presses add to order
 			addToOrderButton.addEventListener('click', function() {
 				window.addItemToOrder(itemId);
 				window.triggerRedraws();
+				
 			});
 		} else{
 			const menuItems = globalState.menuItems;
@@ -102,12 +106,12 @@ class MenuItem extends HTMLElement {
 			changeStockButton.addEventListener('click', function(){
 
 				// prompt user to enter a new stock number
-				let newVolumeStr = prompt("Enter new stock in ml");
-				let newVolume = Number(newVolumeStr);
+				let newStockStr = prompt("Enter new stock in ml");
+				let newStock = Number(newStockStr);
 				
 				// Catch the error input
-				if (!isNaN(newVolume)){
-					menuItem.itemVolume = newVolume;
+				if (!isNaN(newStock)){
+					menuItem.itemStock = newStock;
 					window.replaceData(menuItem, menuItems);
 					window.triggerRedraws();
 				} else{
