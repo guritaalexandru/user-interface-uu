@@ -30,5 +30,8 @@
   "UNDO": "Undo",
   "REDO": "Redo",
   "GUARD": "notify the guard",
-  "POLICE": "call the police"
+  "POLICE": "call the police",
+  "STAFF_ORDER_PANEL_TITLE": "Outstanding Orders",
+  "MARK_COMPLETE": "Mark Complete",
+  "REMOVE_ORDER": "Remove"
 }

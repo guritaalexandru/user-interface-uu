@@ -176,6 +176,8 @@ nav {
   transition: background-color linear 0.3s;
 }
 
+
+
 /* -- Left Panel Styling --*/
 .order-title {
   padding-left: 20px;
@@ -203,6 +205,17 @@ nav {
 
 .checkout-order-items .order-item .right-aligned {
   display: none;
+}
+
+.staff-order-item {
+  background-color: white;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .unit-number {

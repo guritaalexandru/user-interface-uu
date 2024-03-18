@@ -12,6 +12,13 @@ function getOrderItemById(itemId) {
 	return clientCurrentOrderArray.find(orderItem => orderItem.itemId === itemId);
 }
 
+function getOrderById(orderId) {
+	const {
+		ordersArray
+	} = window.globalState;
+	return ordersArray.find(order => order.orderId === orderId);
+}
+
 function trimClientOrderActionStack() {
 	const currentStackPlace = window.globalState.clientOrderActionStackObject.currentStackPlace;
 
@@ -68,6 +75,16 @@ function subtractItemFromOrder(itemId, inUndoRedo = false) {
 	}
 }
 
+function removeOrderFromOrdersArray(order, inUndoRedo = false) {
+	const {
+		ordersArray
+	} = window.globalState;
+	const index = ordersArray.indexOf(order);
+	if (index > -1) {
+		ordersArray.splice(index, 1);
+	}
+}
+
 function removeItemFromOrder(itemId, inUndoRedo = false) {
 	if(!inUndoRedo) {
 		trimClientOrderActionStack();
@@ -117,8 +134,10 @@ function redoClientOrderAction() {
 
 window.getMenuItemById = getMenuItemById;
 window.getOrderItemById = getOrderItemById;
+window.getOrderById = getOrderById;
 window.addItemToOrder = addItemToOrder;
 window.subtractItemFromOrder = subtractItemFromOrder;
 window.removeItemFromOrder = removeItemFromOrder;
 window.undoClientOrderAction = undoClientOrderAction;
 window.redoClientOrderAction = redoClientOrderAction;
+window.removeOrderFromOrdersArray = removeOrderFromOrdersArray;
