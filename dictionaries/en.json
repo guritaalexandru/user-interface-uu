@@ -1,5 +1,5 @@
 {
-  "CHANGE_LANGUAGE": "Language",
+  "CHANGE_LANGUAGE": "Change Language",
   "LOGIN": "Login",
   "LOGOUT": "Logout",
   "CHANGE_LANGUAGE_ENGLISH": "English",
@@ -33,5 +33,12 @@
   "POLICE": "call the police",
   "STAFF_ORDER_PANEL_TITLE": "Outstanding Orders",
   "MARK_COMPLETE": "Mark Complete",
-  "REMOVE_ORDER": "Remove"
+  "REMOVE_ORDER": "Remove",
+  "MENU_ITEM_CHANGE_STOCK": "Change Stock",
+  "MENU_ITEM_STOCK": "Stock",
+  "ENTER_USERNAME": "Username",
+  "ENTER_PASSWORD": "Password",
+  "LOGIN_FORM":"Login to account",
+  "ACCOUNT_WARNING": "Invalid Username or Password!",
+  "ACCOUNT_BALANCE_TEXT": "Balance: "
 }

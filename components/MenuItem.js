@@ -31,10 +31,15 @@ class MenuItem extends HTMLElement {
 		const itemProducer = menuItem.producer;
 		const itemDescription = menuItem.description;
 		const alcoholLevel = menuItem.alcoholStrength;
+		const itemStock = menuItem.itemStock;
+		const showItem = menuItem.showItem;
 
-		return `
+		// Load wether it is a customer or a staff
+		const user = globalState.userType;
+
+		if (itemStock>0) {return `
 		<div id="menuItemBorder">
-		  <div id="MenuItem" class="menu-item" data-item-id="${itemId}" draggable="true">
+		  <div id="menuItem" class="menu-item" data-item-id="${itemId} " draggable="true"">
 		  	<div id="menuItemTitle">
 	  			<span>${itemName}</span>
 			</div>
@@ -59,23 +64,67 @@ class MenuItem extends HTMLElement {
 			</div>
 			<!--	TODO: Add to order only available for clients, not staff		-->
 			<div>
-				<button class="addToOrder" data-item-id="${itemId}" data-language-tag="MENU_ITEM_ADD_TO_ORDER"></button>
 				
+				${user =="staff" ? 
+				`
+				<div>	
+					<span data-language-tag="MENU_ITEM_STOCK"></span>
+					<span>: ${itemStock}</span>
+				</div>
+				<button class="changeStock" data-item-id="${itemId}" data-menu-item = "${menuItem}" data-language-tag="MENU_ITEM_CHANGE_STOCK"></button>`: 
+				`<button class="addToOrder" data-item-id="${itemId}" data-language-tag="MENU_ITEM_ADD_TO_ORDER"></button>`
+			}
 				</div>
 		  </div>
 		<div>
-	`;
+	`;}else{
+		return "";
+	}
 	}
 
 	initEventListeners() {
 		const domElement = this.firstElementChild;
 		const addToOrderButton = domElement.querySelector('.addToOrder');
+		const changeStockButton = domElement.querySelector('.changeStock');
 		const itemId = parseInt(this.getAttribute('itemId'));
 
-		addToOrderButton.addEventListener('click', function() {
-			window.addItemToOrder(itemId);
-			window.triggerRedraws();
-		});
+		
+		if (globalState.userType == 'client' || globalState.userType == 'vip'){
+			// When the customer presses add to order
+			addToOrderButton.addEventListener('click', function() {
+				window.addItemToOrder(itemId);
+				window.triggerRedraws();
+				
+			});
+		} else{
+			const menuItems = globalState.menuItems;
+			const menuItem = window.getMenuItemById(itemId);
+
+			// When the staff presses change stock
+			//TODO: Pop up a text box to key in new stock number
+			
+			changeStockButton.addEventListener('click', function(){
+
+				// prompt user to enter a new stock number
+				let newStockStr = prompt("Enter new stock in ml");
+				let newStock = Number(newStockStr);
+				
+				// Catch the error input
+				if (!isNaN(newStock)){
+					menuItem.itemStock = newStock;
+					window.replaceData(menuItem, menuItems);
+					window.triggerRedraws();
+				} else{
+					alert("INVALID INPUT!");
+				}
+				
+				// console.log(menuItems);
+				// window.updateFile("Beverages_new.js",globalState.menuItems); // Does not work without a DB
+				
+			});
+		};
+
+
 
 		domElement.addEventListener('dragstart', this.drag);
 	}

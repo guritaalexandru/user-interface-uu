@@ -2,6 +2,7 @@ const globalState = {
 	// Global application state
 	isLoggedIn: false,
 	language: 'en',
+	currentUser:null,
 	isCheckoutModalOpen: false,
 	isPayAtTheBarModalOpen: false,
 	userType: 'client', // client, staff, VIP(?)
