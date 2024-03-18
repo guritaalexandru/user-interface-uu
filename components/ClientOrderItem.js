@@ -27,20 +27,22 @@ class ClientOrderItem extends HTMLElement {
 	  	<div>
 	  		<span>${itemName}</span>
 		</div>
-		<div>
-			<span>$ ${itemPrice}</span>
-		</div>
-		<div class="right-aligned">
-			<button class="minusButton" data-item-id="${itemId}">
-				<i class="fa-solid fa-minus"></i>
-			</button>
-			<span>${itemQuantity}</span>
-			<button class="plusButton" data-item-id="${itemId}">
-				<i class="fa-solid fa-plus"></i>
-			</button>
-			<button class="deleteButton" data-item-id="${itemId}">
-				<i class="fas fa-trash-alt"></i>
-			</button>
+		<div class="rowContainer">
+			<div>
+				<span>$ ${itemPrice}</span>
+			</div>
+			<div>
+				<button id = "minusButton" class="actionButton" data-item-id="${itemId}">
+					<i class="fa-solid fa-minus"></i>
+				</button>
+				<span>${itemQuantity}</span>
+				<button id = "plusButton"  class="actionButton" data-item-id="${itemId}">
+					<i class="fa-solid fa-plus"></i>
+				</button>
+				<button id = "deleteButton"  class="actionButton" data-item-id="${itemId}">
+					<i class="fa-solid fa-trash-can"></i>
+				</button>
+			</div>
 		</div>
 	  </div>
 	`;
@@ -48,9 +50,9 @@ class ClientOrderItem extends HTMLElement {
 
 	initEventListeners() {
 		const domElement = this.firstElementChild;
-		const plusButton = domElement.querySelector('.plusButton');
-		const minusButton = domElement.querySelector('.minusButton');
-		const deleteButton = domElement.querySelector('.deleteButton');
+		const plusButton = domElement.querySelector('#plusButton');
+		const minusButton = domElement.querySelector('#minusButton');
+		const deleteButton = domElement.querySelector('#deleteButton');
 
 		const itemId = parseInt(domElement.getAttribute('data-item-id'));
 
