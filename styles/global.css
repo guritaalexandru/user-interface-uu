@@ -68,6 +68,13 @@ nav {
   margin-right: 10px;
 }
 
+/* Account balance */
+#accountBalance {
+  color: white;
+  margin-left: auto;
+  padding-right: 10px;
+}
+
 /* Hide the dropdown content by default */
 .dropdown-content {
   display: none;
@@ -164,6 +171,8 @@ nav {
   width: 100%;
 }
 
+
+
 /* -- Left Panel Styling --*/
 .left-panel {
   background-color: #EDE7D9; /*#e3e3e3 #EDE7D9*/
@@ -205,6 +214,17 @@ nav {
 
 .checkout-order-items .order-item .right-aligned {
   display: none;
+}
+
+.staff-order-item {
+  background-color: white;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .unit-number {
@@ -349,10 +369,10 @@ nav {
   background-color: #EDE7D9;
   border: 1px solid transparent;
   border-radius: 5%;
-  color: #585550; 
+  color: #585550;
   padding: 5px;
   width:180px;
-  height: 320px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -367,18 +387,17 @@ nav {
 }
 
 
-/* Styling for the rows of items displayed */
+/* Styling for the rows of items displayed
 #MenuItemsListing{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minMax(220px, 1fr));
-  gap:10px;
-}
+  grid-template-columns: repeat(3, minMax(180px, 1fr));
+  gap:30px;
+} */
 
 #menuItemTitle{
   font-size: 1.1em;
   font-weight: bold;
 }
-
 /* security panel*/
 .centerContainer {
   display: flex;
@@ -474,3 +493,126 @@ nav {
   to {opacity:1 ;}
 }
 
+#menuItem{
+  background-color: white;
+}
+
+
+
+
+
+/* Media query for when the screen is bigger */
+/* FOR BIG SCREEN */
+@media screen and (min-width: 1600px){
+  #menuItemImage{
+    width: 120px;
+    height: 120px;
+    border: 1px solid;
+  }
+
+  #menuItemTitle{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  #MenuItemsListing{
+    display: grid;
+    grid-template-columns: repeat(4, minMax(235px, 1fr));
+    gap:30px;
+  }
+}
+
+/* normal screen */
+@media screen and (min-width: 800px ) and (max-width: 1600px){
+  #menuItemImage{
+    width: 120px;
+    height: 120px;
+    border: 1px solid;
+  }
+
+  #menuItemTitle{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  #MenuItemsListing{
+    display: grid;
+    grid-template-columns: repeat(3, minMax(235px, 1fr));
+    gap:30px;
+  }
+}
+
+@media screen and (min-width:0x) and (max-width:799px){
+  #menuItemImage{
+    width: 80px;
+    height: 80px;
+    border: 1px solid;
+  }
+
+  #menuItemTitle{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  #MenuItemsListing{
+    display: grid;
+    grid-template-columns: repeat(2, minMax(120px, 1fr));
+    gap:30px;
+  }
+}
+
+
+/* Styling for the login box */
+#login-form {
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width:400px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(220, 220, 220); /* background color for the form */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* add shadow effect */
+  text-align: center;
+}
+
+#login-form-title{
+  padding-bottom: 5%;
+  font-weight: bold;
+}
+
+#closeButton{
+  position: absolute;
+  top:5px;
+  right: 5px;
+}
+
+#login-form form {
+  display: inline-block; /* Make the form display as inline block */
+}
+
+#login-form label {
+  float: left; /* Float labels to the left */
+  width: 100px; /* Set a fixed width for the labels */
+  margin-right: 10px; /* Add some spacing between labels and input boxes */
+  text-align: right; /* Align text of labels to the right */
+}
+
+#login-form input[type="text"] {
+  width: 200px; /* Set a fixed width for the input boxes */
+  margin-bottom: 10px; /* Add some spacing between input boxes */
+}
+
+#EnterAccountButton{
+  gap: 30px;
+  margin-top: 20px;
+}
+
+#username{
+  width:200px
+}
+
+#password{
+  width: 200px
+}

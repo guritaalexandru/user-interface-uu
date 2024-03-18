@@ -19,7 +19,7 @@ class LeftPanel extends HTMLElement {
 
 		return `
 	  <div id="LeftPanel">
-		<div class="${userType === 'client' ? '' : 'hide'}">
+		<div class="${userType === 'client' || userType === 'vip' ? '' : 'hide'}">
 			<client-order-panel-component></client-order-panel-component>
 		</div>
 		<div class="${userType === 'staff' ? '' : 'hide'}">
