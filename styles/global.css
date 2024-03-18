@@ -185,7 +185,6 @@ nav {
 }
 
 
-
 /* -- Left Panel Styling --*/
 .left-panel {
   background-color: #EDE7D9; /*#e3e3e3 #EDE7D9*/
@@ -396,8 +395,9 @@ nav {
 }
 
 .deleteButton:hover {
-  color: #a79364;
-  text-shadow: 0.5px 0.5px 0.5px rgba(190, 188, 188, 0.584); 
+  background-color: transparent;
+  color:#7b7159;
+  transition: background-color linear 0.1s;
 }
 
 /* Styling for the item borders */
@@ -547,58 +547,6 @@ nav {
 #menuItem{
   background-color: transparent;
 }
-/*
-.changeOrderButton{
-  background-color: #617878;
-  border: none;
-  color:  #ede7d9b2; 
-  text-shadow: 0.5px 0.5px 1px rgb(211, 207, 207); 
-  padding: 6px 14px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 3px;
-  font-family: "IM Fell DW Pica SC", serif;
-  
-  i{
-    font-size: 18px;
-    text-shadow: 0.5px 0.5px 1px rgb(211, 207, 207);
-    margin-right: 4px;
-  }
-}
-
-.changeOrderButton:hover {
-  background-color: transparent;
-  color: #7b7159;
-}
-
-.payOrderButton{
-  background-color: #617878;
-  border: none;
-  color:  #ede7d9b2; 
-  text-shadow: 0.5px 0.5px 1px rgb(211, 207, 207); 
-  padding: 6px 14px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 3px;
-  font-family: "IM Fell DW Pica SC", serif;
-  
-  i{
-    font-size: 18px;
-    text-shadow: 0.5px 0.5px 1px rgb(211, 207, 207);
-    margin-right: 4px;
-  }
-}
-
-.payOrderButton:hover {
-  background-color: transparent;
-  color: #7b7159;
-}*/
 
 /*-- stock --*/
 .changeStock {
