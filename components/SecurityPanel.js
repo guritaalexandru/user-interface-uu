@@ -12,11 +12,16 @@ class SecurityPanel extends HTMLElement {
         const {} = this.getRelatedGlobalStates()
 
         return `
-		<div id="SecurityPanel">
-			<i class="fa-solid fa-phone"></i>
-			<button class="basicButton notifyGuardButton" data-language-tag="GUARD"></button>
-			<i class="fa-solid fa-phone"></i>
-			<button class="basicButton callPoliceButton" data-language-tag="POLICE"></button>
+		<div id="SecurityPanel" class="centerContainer">
+			<button class="securtiyButton notifyGuardButton">
+                <i class="fa-solid fa-phone"></i>
+                <span data-language-tag="GUARD"></span>
+            </button>
+			
+			<button class="securtiyButton callPoliceButton" >
+                <i class="fa-solid fa-phone"></i>
+                <span data-language-tag="POLICE"></span>
+            </button>
 		</div>
 		`
     }
