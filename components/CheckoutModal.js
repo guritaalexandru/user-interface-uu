@@ -29,7 +29,10 @@ class CheckoutModal extends HTMLElement {
 
 		return `
 	  <div id="CheckoutModal">
-		<h2><div data-language-tag="CHECKOUT_MODAL_TITLE"></div></h2>
+		<h2>
+			<i class="fa-solid fa-life-ring"></i>
+			<span data-language-tag="CHECKOUT_MODAL_TITLE"></span>
+		</h2>
 		
 		<!--	List items from the order here and style	-->
 
@@ -47,7 +50,10 @@ class CheckoutModal extends HTMLElement {
 		</div>
 
 		<button class="basicButton changeOrderButton" data-language-tag="CHECKOUT_MODAL_CHANGE_ORDER"></button>
-		<button class="basicButton payOrderButton" data-language-tag="CHECKOUT_MODAL_PAY"></button>
+		<button class="basicButton payOrderButton">
+			<i class="fa-solid fa-coins"></i>
+			<span data-language-tag="CHECKOUT_MODAL_PAY"></span>
+		</button>
 	  </div>
 	`;
 	}
