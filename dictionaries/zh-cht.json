@@ -14,5 +14,18 @@
   "MENU_CATEGORY_SPIRITS": "烈酒",
   "MENU_CATEGORY_NON_ALCOHOLIC": "無酒精",
   "MENU_ITEM_PRICE": "金額",
-  "MENU_ITEM_ADD_TO_ORDER": "加入訂單"
+  "MENU_ITEM_ADD_TO_ORDER": "加入訂單",
+  "PROCEED_CHEQUE": "結帳",
+  "STAFF_PANEL_MENU": "菜單",
+  "STAFF_PANEL_ORDERS": "訂單",
+  "STAFF_PANEL_SECURITY": "警報系統",
+  "CHECKOUT_MODAL_TITLE": "您的訂單",
+  "CHECKOUT_MODAL_CHANGE_ORDER": "更改訂單",
+  "CHECKOUT_MODAL_PAY": "結帳",
+  "PAY_AT_THE_BAR": "請至吧檯結帳！",
+  "NEW_ORDER": "新增訂單",
+  "UNDO": "復原",
+  "REDO": "還原",
+  "GUARD": "呼叫警衛",
+  "POLICE": "報警"
 }
