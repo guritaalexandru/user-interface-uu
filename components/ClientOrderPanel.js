@@ -50,12 +50,19 @@ class ClientOrderPanel extends HTMLElement {
 		return `
 	  <div id="ClientOrderPanel">
 	  	<div id="ClientOrderPanelWrapper">
-	  	  	<div>
-		        <button class="basicButton undoButton" data-language-tag="UNDO"></button>
-		        <button class="basicButton redoButton" data-language-tag="REDO"></button>
-			</div>
-			<div class=order-title>
-				<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
+			<div class = "rowContainer">
+				<div class="order-title">
+					<h2><i class="fa-solid fa-life-ring"></i></h2>
+					<h2 data-language-tag="CLIENT_ORDER_PANEL_TITLE"></h2>
+				</div>
+				<div>
+					<button class="actionButton undoButton">
+						<i class="fa-solid fa-rotate-left"></i>
+					</button>
+					<button class="actionButton redoButton">
+						<i class="fa-solid fa-rotate-right"></i>
+					</button>
+				</div>
 			</div>
 			<div id="ClientOrderItems">
 				${clientCurrentOrderArray.map(orderItem => `
@@ -70,7 +77,11 @@ class ClientOrderPanel extends HTMLElement {
 					<span data-language-tag="CLIENT_ORDER_TOTAL_PRICE"></span>
 					<span> $${totalOrderPrice}</span>
 				</div>
-				<button class="basicButton paymentButton" data-language-tag="PROCEED_CHEQUE"></button>
+				<button class="basicButton paymentButton">	
+					<i class="fa-solid fa-coins"></i>
+					<span data-language-tag="PROCEED_CHEQUE"></span>
+				</button>
+					
 			</div>
 		</div>
 	  </div>

@@ -16,12 +16,27 @@ class MenuCategories extends HTMLElement {
 
 		return `
 	  <div id="MenuCategories">
-		<div class="menu-categories">
-		<button class="basicButton" data-language-tag="MENU_CATEGORY_ALL" data-menu-category="all"></button>
-		<button class="basicButton" data-language-tag="MENU_CATEGORY_BEER" data-menu-category="beer"></button>
-		<button class="basicButton" data-language-tag="MENU_CATEGORY_WINE" data-menu-category="wine"></button>
-		<button class="basicButton" data-language-tag="MENU_CATEGORY_SPIRITS" data-menu-category="spirits"></button>
-		<button class="basicButton" data-language-tag="MENU_CATEGORY_NON_ALCOHOLIC" data-menu-category="non-alcoholic"></button>
+		<div class="menu-categories">	
+			<button class="basicButton" data-language-tag="MENU_CATEGORY_ALL" data-menu-category="all"></button>
+			<button class="basicButton" data-menu-category="beer">
+				<i class="fa-solid fa-beer-mug-empty"></i>
+				<span data-language-tag="MENU_CATEGORY_BEER" ></span>
+			</button>
+
+			<button class="basicButton" data-menu-category="wine">
+				<i class="fa-solid fa-wine-glass"></i>
+				<span data-language-tag="MENU_CATEGORY_WINE"  ></span>
+			</button>
+			
+			<button class="basicButton" data-menu-category="spirits">
+				<i class="fa-solid fa-bottle-droplet"></i>
+				<span data-language-tag="MENU_CATEGORY_SPIRITS" ></span>
+			</button>
+
+			<button class="basicButton" data-menu-category="non-alcoholic">
+				<i class="fa-solid fa-mug-saucer"></i>
+				<span data-language-tag="MENU_CATEGORY_NON_ALCOHOLIC" ></span>
+			</button>
 		</div>
 	  </div>
 	`;
