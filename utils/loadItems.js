@@ -59,6 +59,11 @@ function getAllItems(database){
             itemNameFull += (" " + database[i].name2);
         }
 
+        var itemStock = database[i].itemStock;
+        if (itemStock == null){
+            itemStock = 500;
+        }
+
         collector.push(
                 {
                     itemId : parseInt(database[i].articleid),
@@ -70,7 +75,9 @@ function getAllItems(database){
                     alcoholStrength : database[i].alcoholstrength,
                     published: publishedvar,
                     deleted: deletedvar,
-                    itemImage:  imageLinks[finalCategory]
+                    itemImage:  imageLinks[finalCategory],
+                    itemStock: itemStock,
+                    showItem: true
                 }
             );
     };
@@ -99,4 +106,7 @@ function findCategory(rawCategory){
     
 }
 
+
+
 loadItems();
+window.loadItems = loadItems;

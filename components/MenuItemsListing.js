@@ -30,12 +30,15 @@ class MenuItemsListing extends HTMLElement {
 
 
 		return `
-	  <div id="MenuItemsListing" class="menu-item-listing">
-			${filteredMenuItems.map(menuItem => {
-				return `<menu-item-component itemId="${menuItem.itemId}"></menu-item-component>`;
-			}).join('')}
-	  </div>
-	`;
+    <div id="MenuItemsListing" class="menu-item-listing">
+        ${filteredMenuItems
+            .filter(menuItem => menuItem !== ``) // Filter out empty menu items
+            .map(menuItem => {
+                return `<menu-item-component itemId="${menuItem.itemId}"></menu-item-component>`;
+            })
+            .join('')}
+    </div>
+`;
 	}
 
 	initEventListeners() {

@@ -33,5 +33,11 @@
   "POLICE": "Ring polisen",
   "STAFF_ORDER_PANEL_TITLE": "Utestående beställningar",
   "MARK_COMPLETE": "Markera Komplett",
-  "REMOVE_ORDER": "Avlägsna"
+  "REMOVE_ORDER": "Avlägsna",
+  "MENU_ITEM_CHANGE_STOCK":"ändra artikel lager",
+  "MENU_ITEM_STOCK": "Stock",
+  "ENTER_USERNAME": "Användarnamn",
+  "ENTER_PASSWORD": "Lösenord",
+  "LOGIN_FORM":"Logga in på konto",
+  "ACCOUNT_WARNING": "Ogiltigt användarnamn eller lösenord!"
 }
