@@ -22,7 +22,7 @@ class StaffOrdersWrapper extends HTMLElement {
 
 		return `
 	  <div id="StaffOrdersWrapper">
-	  	<div class=order-title>
+	  	<div class=outstanding-order-title>
 	  		<h2 data-language-tag="STAFF_ORDER_PANEL_TITLE"></h2>
   		</div>
 		<div id="StaffOrderItems">
