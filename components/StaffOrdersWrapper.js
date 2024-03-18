@@ -22,8 +22,18 @@ class StaffOrdersWrapper extends HTMLElement {
 
 		return `
 	  <div id="StaffOrdersWrapper">
+	  	<div class=order-title>
+	  		<h2 data-language-tag="STAFF_ORDER_PANEL_TITLE"></h2>
+  		</div>
+		<div id="StaffOrderItems">
+			${ordersArray.map(orderItem => `
+				<staff-order-item-component orderId="${orderItem.orderId}"></staff-order-item-component>
+			`).join('')}
+		</div>
+
 
 	  </div>
+		
 	`;
 	}
 

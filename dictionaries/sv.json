@@ -30,5 +30,8 @@
   "UNDO": "Ångra",
   "REDO": "Gör om",
   "GUARD": "Meddela vakten",
-  "POLICE": "Ring polisen"
+  "POLICE": "Ring polisen",
+  "STAFF_ORDER_PANEL_TITLE": "Utestående beställningar",
+  "MARK_COMPLETE": "Markera Komplett",
+  "REMOVE_ORDER": "Avlägsna"
 }
