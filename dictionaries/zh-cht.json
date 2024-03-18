@@ -27,5 +27,15 @@
   "UNDO": "復原",
   "REDO": "還原",
   "GUARD": "呼叫警衛",
-  "POLICE": "報警"
+  "POLICE": "報警",
+  "STAFF_ORDER_PANEL_TITLE": "未完成訂單",
+  "MARK_COMPLETE": "已完成訂單",
+  "REMOVE_ORDER": "移除",
+  "MENU_ITEM_CHANGE_STOCK": "修改庫存",
+  "MENU_ITEM_STOCK": "庫存",
+  "ENTER_USERNAME": "帳號",
+  "ENTER_PASSWORD": "密碼",
+  "LOGIN_FORM":"登入帳戶",
+  "ACCOUNT_WARNING": "帳號或密碼有誤!",
+  "ACCOUNT_BALANCE_TEXT": "餘額: "
 }
