@@ -4,13 +4,13 @@ Using this platform, the clients are able to see the menu, filter through it and
 
 The staff can also use the application to log in and see the menu, edit stocks, see and manage the client's orders and notify the police or security in case of an emergency. 
 
-Regarding techical information:
+Regarding technical information:
 - The project only has one dependency to an icon library (external stylesheet). It was used to improve user experience.
 - The start file is index.html
 - A staff member can log in using the following username and password: staffAccount (password: password123)
 
 Times reported in Clockify:
 - Lucas Tay: 13h
-- Hsiao-Yuan Hung:
+- Hsiao-Yuan Hung: 35h
 - Alexandru Gurita: 18h
-- Sari Pagurek van Mossel: 
+- Sari Pagurek van Mossel: 25h
